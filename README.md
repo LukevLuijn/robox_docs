@@ -39,10 +39,10 @@
 
 |#|Product|Beschrijving|
 |:---:|:---|:---|
-|**PR-11**|[**Homing**](https://github.com/LukevLuijn/robox_docs/tree/main/prototypes/firmware/homing_test)|Deze pagina bevat de code voor het homing prototype.|
-|**PR-12**|[**Message**](https://github.com/LukevLuijn/robox_docs/tree/main/prototypes/firmware/message_test)|Deze pagina bevat de code voor het messaging prototype.|
-|**PR-13**|[**Serial**](https://github.com/LukevLuijn/robox_docs/tree/main/prototypes/firmware/serial_test)|Deze pagina bevat cde code voor het serial communication prototype.|
-|**PR-14**|[**State machine**](https://github.com/LukevLuijn/robox_docs/tree/main/prototypes/firmware/state_machine_test)|Deze pagina bevat de code voor het state machine prototype. |
+|**PR-11**|[**Homing**](https://github.com/LukevLuijn/robox_docs/tree/main/prototypes/firmware/homing_test)|Deze pagina bevat de code voor het 'homing'-prototype.|
+|**PR-12**|[**Message**](https://github.com/LukevLuijn/robox_docs/tree/main/prototypes/firmware/message_test)|Deze pagina bevat de code voor het 'messaging'-prototype.|
+|**PR-13**|[**Serial**](https://github.com/LukevLuijn/robox_docs/tree/main/prototypes/firmware/serial_test)|Deze pagina bevat cde code voor het 'serial communication'-prototype.|
+|**PR-14**|[**State machine**](https://github.com/LukevLuijn/robox_docs/tree/main/prototypes/firmware/state_machine_test)|Deze pagina bevat de code voor het 'state machine'-prototype. |
 
 ## Prototypes software
 
