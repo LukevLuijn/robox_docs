@@ -8,8 +8,6 @@ Voor een visuele implementatie op de microcontroller is er gekozen om telkens wa
 
 Het resultaat is te zien in [dit](https://github.com/LukevLuijn/robox_docs/blob/main/prototypes/firmware/state_machine_test/assets/state_machine_test_clip_00.mp4?raw=true) filmpje. Er worden meerdere games 'gespeeld' door op de knop te drukken.
 
-
-
 # Literatuurlijst
 
 Sourcemaking. (z.d.-d). Design Patterns and Refactoring. State Pattern. Geraadpleegd op 30 mei 2022, van [https://sourcemaking.com/design_patterns/state](https://sourcemaking.com/design_patterns/state)
