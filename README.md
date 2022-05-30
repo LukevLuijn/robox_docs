@@ -48,9 +48,9 @@
 
 |#|Product|Beschrijving|
 |:---:|:---|:---|
-|**PR-15**|[**Driver**](https://github.com/LukevLuijn/robox_docs/tree/main/prototypes/software/driver_test/code)|Deze pagina bevat de code voor het 'driver'-prototype.|
-|**PR-16**|[**Logger**](https://github.com/LukevLuijn/robox_docs/tree/main/prototypes/software/logger_test/code)|Deze pagina bevat de code voor het 'logger'-prototype.|
-|**PR-17**|[**Visual**](https://github.com/LukevLuijn/robox_docs/tree/main/prototypes/software/robot_visual_test/code)|Deze pagina bevat de code voor het 'simulatie'-prototype.|
+|**PR-15**|[**Driver**](https://github.com/LukevLuijn/robox_docs/tree/main/prototypes/software/driver_test)|Deze pagina bevat de code voor het 'driver'-prototype.|
+|**PR-16**|[**Logger**](https://github.com/LukevLuijn/robox_docs/tree/main/prototypes/software/logger_test)|Deze pagina bevat de code voor het 'logger'-prototype.|
+|**PR-17**|[**Visual**](https://github.com/LukevLuijn/robox_docs/tree/main/prototypes/software/robot_visual_test)|Deze pagina bevat de code voor het 'simulatie'-prototype.|
 
 
 ## Andere producten
