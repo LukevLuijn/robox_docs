@@ -6,7 +6,8 @@ In dit prototype is voornamelijk de package [**StateMachine**](https://github.co
 
 Voor een visuele implementatie op de microcontroller is er gekozen om telkens wanneer je niet wint of verliest ('again state') een blauw lampje aan te zetten, als je wint gaat het groene lampje aan en als je verliest het rode lampje.
 
-Het resultaat is te zien in [dit](https://github.com/LukevLuijn/robox_docs/blob/main/prototypes/firmware/state_machine_test/assets/state_machine_test_clip_00.mp4?raw=true) filmpje.
+Het resultaat is te zien in [dit](https://github.com/LukevLuijn/robox_docs/blob/main/prototypes/firmware/state_machine_test/assets/state_machine_test_clip_00.mp4?raw=true) filmpje. Er worden meerdere games 'gespeeld' door op de knop te drukken.
+
 
 
 # Literatuurlijst
