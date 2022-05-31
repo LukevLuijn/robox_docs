@@ -30,7 +30,7 @@
 
 |#|Product|Beschrijving|
 |:---:|:---|:---|
-|**PR-07**|[**MDD**]()|In het *Model design document* wordt een diepere toelichting gegeven op de requirements en welke keuzes er gemaakt zijn tijdens de ontwikkeling van het model van de robot.|
+|**PR-07**|[**MDD**](https://github.com/LukevLuijn/robox_docs/blob/bf2946f76c06f7e81c7152024e87009c6a20ca56/design/hardware/mdd/mdd_hardware.pdf)|In het *Model design document* wordt een diepere toelichting gegeven op de requirements en welke keuzes er gemaakt zijn tijdens de ontwikkeling van het model van de robot.|
 |**PR-08**|[**BOM**](https://github.com/LukevLuijn/robox_docs/tree/main/hardware/bill_of_materials)|In dit document zijn alle benodigde onderdelen beschreven. Elk onderdeel is weergegeven met prijs en URL naar waar deze gekocht is.|
 |**PR-09**|[**Models**](https://github.com/LukevLuijn/robox/tree/main/robox_models)|Op deze pagina zijn enkele afbeeldingen van het uiteindelijke model van de robot te zien. In de verschillende mappen zijn alle losse .stl documenten te vinden die verwerkt zijn in het model.|
 
