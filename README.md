@@ -6,7 +6,7 @@
 
 |#|Product|Beschrijving|
 |:---:|:---|:---|
-|**DMP-01**|[**DRP**]()||
+|**DMP-01**|[**Ontwerpproces**]()||
 |**DMP-02**|[**Experiment-01**](https://github.com/LukevLuijn/robox_docs/blob/main/experiment/experiment_01/experiment_01.pdf)|Dit document bevat het eerste experiment gemaakt voor de minor DMP. In dit experiment wordt onder andere de torque van verschillende stepper drivers getest.|
 |**DMP-03**|[**Experiment-02**](https://github.com/LukevLuijn/robox_docs/blob/main/experiment/experiment_02/experiment_02.pdf)|Dit document bevat het tweede experiment gemaakt voor de minor DMP. In dit experiment wordt onder andere de repeatability van de robot getest.|
 
