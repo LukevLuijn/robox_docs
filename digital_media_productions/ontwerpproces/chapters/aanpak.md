@@ -46,8 +46,6 @@ Het project is begonnen met literatuur studies (ICA, z.d.). De eerste vraag die 
 
 Persoonlijk ben ik het meest geïnteresseerd in robots die een groot werk oppervlak hebben en snel kunnen bewegen. Gezien de doelgroep soortgelijk is aan mijzelf zijn deze onderdelen opgenomen. De complexiteit van beide het ontwerp en software zijn opgenomen in de lijst omdat het project in een half jaar voltooid moet zijn en een overmatig complexe robot is dan niet haalbaar. Tot slot de persoonlijke interesse, het is een groot project dat erg veel tijd zal gaan kosten. Als mijn persoonlijke interesse niet aansluit bij de gemaakte keuze zal het voltooien van het project lastig worden. Op basis van deze vereisten zijn er enkele ontwerpen overwogen (ICA, z.d.-a):
 
-> TODO linkjes
-
 - Cartesiaanse Robot (link)
 - Cylindrical Robot (link)
 - SCARA (Selective Compliance Assembly Robot Arm) Robot (link)
@@ -77,15 +75,13 @@ Je hebt alle informatie uit je onderzoek helder geanalyseerd en hebt het onderwe
 
 Toen de richting van het project duidelijk was is er gekeken naar de functionaliteiten van de robot. Hoe groot moet de robot worden, wat moet de robot allemaal kunnen, hoe zal de robot opgebouwd worden en welke onderdelen zijn nodig voor de realisatie van deze functionaliteiten (ICA, z.d.-c).
 
-> TODO
-
 De verschillende functionaliteiten van de robot zijn opgenomen en verdeeld over drie documenten. De functionaliteiten met betrekking tot het daadwerkelijke model van de robot zijn opgenomen in het [Model Design document - 3. Requirements](https://github.com/LukevLuijn/robox_docs/blob/bf2946f76c06f7e81c7152024e87009c6a20ca56/design/hardware/mdd/mdd_hardware.pdf) (bijlage X - mdd_hardware.pdf) In dit hoofdstuk worden alle functionaliteiten met betrekking tot de hardware gespecificeerd. In dit document wordt onder andere de snelheid en de omvang van de robot vastgesteld. 
 
 Op gebied van firmware zijn de functionaliteiten van de applicatie gedocumenteerd in het [Software requirements specification](https://github.com/LukevLuijn/robox_docs/blob/f1926df7065f7596bd7ae3ef2e1dc76c82e2e259/design/firmware/srs/srs_firmware.pdf) (SRS) document (bijlage X - srs_firmware.pdf). Voor de GUI (grafische user interface) is er gelijknamig document opgesteld deze is terug te vinden in bijlage X - srs_software.pdf ([SRS](https://github.com/LukevLuijn/robox_docs/blob/f1926df7065f7596bd7ae3ef2e1dc76c82e2e259/design/software/srs/srs_software.pdf)).
 
 In de SRS documenten van beide de firmware en de GUI zijn aan de hand van verschillende use cases requirements opgesteld. Deze requirements zijn later in de applicatie(s) verwerkt.
 
-> TODO misschien aanvullen?
+> misschien aanvullen?
 
 <!-- 
 // Ideate 1
@@ -130,11 +126,12 @@ Op basis van deze keuzes moest het frame vergroot worden. De controller moest er
 
 De verschillende segmenten konden door de gecentraliseerde controller ook aanzienlijk (9 millimeter) slanker gemaakt worden. Bij deze iteratie is er ook gekeken naar de bewegingsruimte van de arm. Het is de bedoeling dat het laatste segment van de arm meer dan 360 graden kan draaien op elk mogelijke positie van het middelste segment. Dit was niet mogelijk bij de eerste iteratie. Om deze eis te volbrengen is er gekozen voor het verlengen van het middelste segment en het inkorten van het laatste segment. Hierdoor kan de arm nu onder het middelste segment door zonder het frame te raken.
 
-> TODO
-
 Na de afloop van het eerste experiment (bijlage X - experiment_01) werd er geconstateerd dat de axiale beweging van het eerder gebruikte systeem niet voldoende was. Er werd gebruik gemaakt van twee radiale lagers waarin het volgende segment gemonteerd zat. Echter hebben radiale lagers een capaciteit voor dynamische load (het kunnen weerstaan van beide axiale en radiale krachten) maar deze was niet voldoende voor het uiteindelijke systeem. 
 
 Er is er toen voor gekozen om dit complete ontwerp te niet te stellen en eerst een paar kleine tests uit te voeren met axiale en radiale lagers gecombineerd (ICA, z.d.-b). Deze tests zijn in de onderstaande afbeeldingen te zien.
+
+<div style="page-break-after: always;"></div>
+
 
 ||||
 |:---:|:---:|:---:|
@@ -224,8 +221,6 @@ Het idee van dit model was om de verschillende lagen te klemmen met vier 60 mill
 | <img width="310" src="assets/model/actual/segment00/back_left_view.png"  alt="dimensies"/> |<img width="330" src="assets/model/actual/segment00/back_right_view.png"  alt="dimensies"/> |<img width="295" src="assets/model/actual/segment00/front_right_view.png"  alt="dimensies"/> |<img width="300" src="assets/model/actual/segment00/front_left_view.png"  alt="dimensies"/> |
 |       **!afbeelding** - *Frame - Back left view*       |**!afbeelding** - *Frame - Back right view*       |**!afbeelding** - *Frame - Front right view*       |**!afbeelding** - *Frame - Front left view*       |
 
-> TODO
-
 De constructie van het frame verliep over het algemeen vrij vlekkeloos. Zoals in het [MDD document](https://github.com/LukevLuijn/robox_docs/blob/bf2946f76c06f7e81c7152024e87009c6a20ca56/design/hardware/mdd/mdd_hardware.pdf) (bijlage X - mdd_hardware.pdf) verteld is het frame opgebouwd uit een 'electronica'-deel en een 'lineaire beweging'-deel. Deze onderverdeling maakte het uiterst makkelijk om de electronica te monteren en te bedraden. Ook het opzetten van de lineaire beweging was erg makkelijk.
 
 Pas wanneer alle sub constructies in elkaar gezet waren kwamen de problemen aan tevoorschijn. Er zat een aanzienlijke 'wiebel' in de leadscrews dit resulteerde een flinke vibratie, hierdoor kon de Z-as niet sneller manoeuvreren dan 3000 stappen per seconden (7,5 millimeter per seconden) dit zou betekenen dat de Z-as voor een beweging over de volledige hoogte bijna een minuut nodig heeft. 
@@ -243,7 +238,7 @@ Toen het arm onderdeel van de robot gemonteerd werd op de Z-as bleek dat het sys
 // een afgewogen keuze voor verdere uitwerkingen gemaakt. 
 -->
 
-## De firmware TODO
+## De firmware
 
 Voor de constructie van de firmware is zoals verteld eerst een [software requirements specification](https://github.com/LukevLuijn/robox_docs/blob/f1926df7065f7596bd7ae3ef2e1dc76c82e2e259/design/firmware/srs/srs_firmware.pdf) (Bijlage X - srs_firmware.pdf) document opgezet. In dit document zijn de verschillende functionaliteiten van de firmware opgezet aan de hand van brainstorm sessies met de opdrachtgever. Deze functionaliteiten zijn vervolgens verwerkt in een usecase diagram. Verschillende belangrijke usecases zijn uitgewerkt in fully-dressed formaat. 
 
@@ -280,7 +275,10 @@ Voor het prototype is er een klein spel opgezet. Je gooit met twee dobbelstenen.
 
 In [dit](https://github.com/LukevLuijn/robox_docs/blob/main/prototypes/firmware/state_machine_test/assets/state_machine_test_clip_00.mp4?raw=true) filmpje is het resultaat van dit prototype te zien. Voor het visuele aspect is er een blauw LEDje gekoppeld aan de 'Again state', een rood LEDje voor de 'Lose state' en een groen LEDje voor de 'Win state'. Het spel wordt geactiveerd door middel van een knop.
 
-## De software TODO
+<div style="page-break-after: always;"></div>
+
+
+## De software
 
 Voor de ontwikkeling van de software (GUI) is er net zoals bij de firmware eerst een [software requirements specification](https://github.com/LukevLuijn/robox_docs/blob/f1926df7065f7596bd7ae3ef2e1dc76c82e2e259/design/software/srs/srs_software.pdf) (bijlage X - srs_software.pdf) document opgezet. In dit document zijn de verschillende functionaliteiten verkregen uit een brainstorm sessie met de opdrachtgever verwerkt. Eerst is er een usecase diagram opgezet (Hoofdstuk 3) die al deze functionaliteiten bevat. Vervolgens zijn er enkele belangrijke usecases uitgewerkt in fully-dressed formaat (Hoofdstuk 5). Op basis van de verschillende usecase zijn de functionele en niet-functionele requirements opzet. Deze zijn gesorteerd volgens de MoSCoW methode. Elke requirement is voorzien van een markering of deze in het uiteindelijke product verwezenlijkt is (Hoofdstuk 6.1 & 6.2).
 
@@ -299,6 +297,8 @@ Hoewel er pas later in het project begonnen is aan de ontwikkeling van de GUI zi
 
 Voor de ontwikkeling van de GUI wordt gebruik gemaakt van de library [wxWidgets](https://www.wxwidgets.org/). Deze library maakt het mogelijk om een cross-platform GUI te ontwikkelen, deze library is ook gebruikt tijdens de opleiding. Voor de ontwikkeling van de daadwerkelijke frames is gebruik gemaakt van de Rapid application development (RAD) tool [wxFromBuilder](https://github.com/wxFormBuilder/wxFormBuilder), deze tool maakt het mogelijk om relatief snel een frame te bouwen.
 
+<div style="page-break-after: always;"></div>
+
 ### Iteratie 01 - Toetsenbord en muis
 
 |||
@@ -315,6 +315,9 @@ Het tweede onderdeel van deze iteratie is terug te zien in de afbeelding *iterat
 Het derde onderdeel in deze iteratie is het sequence paneel, deze is te zien in beide afbeeldingen (*iteratie 01 - frame manual*, *iteratie 01 - frame keyboard*) (rechts). Dit paneel was verantwoordelijk voor het aanmaken, opslaan, aanpassen, en verwijderen van sequences.
 
 Een sequence is een verzameling van verschillende bewegingen die op volgorde afgespeeld konden worden. Wanneer er door middel van een control methodiek een bepaalde beweging is uitgevoerd kan deze opgeslagen worden in een sequence. Dit kan gedaan worden voor een aantal verschillende bewegingen (zo veel als je wilt). Deze sequence kan vervolgens afgespeeld worden zodat de robot alle bewegingen uitvoert die opgeslagen zijn in de sequence. Op deze manier kan de robot 'getraind' worden voor een bepaalde activiteit, en deze activiteit herhaaldelijk uitvoeren.
+
+<div style="page-break-after: always;"></div>
+
 
 ### Iteratie 02 - Sequence paneel
 
@@ -338,6 +341,9 @@ De derde iteratie was de laatste iteratie voor de GUI. Omdat het sequence paneel
 
 De locatie waar het sequence paneel voorheen geplaatst was is tijdens deze iteratie gebruikt voor het weergeven van de huidige positie in hoeken en daar onder de positie in coördinaten. Deze positie werd tien keer per seconden ge-update. 
 
+<div style="page-break-after: always;"></div>
+
+
 ### Iteratie 04 - Simulatie
 
 Tijdens de implementatie van het cartesiaanse coördinaten systeem bleken de slider geen ideale besturingsmethode te zijn, voor de coördinaten. Voor bijvoorbeeld een bepaalde X locatie zijn er weer andere Y coördinaten en andersom. Hierdoor moet er erg veel berekend worden in de applicatie zelf, niet handig.
@@ -348,9 +354,7 @@ De oplossing die gekozen was was om de cartesiaanse besturing te realiseren door
 
 Tijdens de ontwikkeling van de GUI zijn er een drietal prototypes gemaakt. Het eerste prototype was de communicatie met de robot zelf, de [Driver](https://github.com/LukevLuijn/robox_docs/tree/main/prototypes/software/driver_test) (bijlage X - prot_software_driver). De driver is verantwoordelijk voor het interpreteren van de inkomende berichten van de robot. Het implementeren van de functionaliteiten van de firmware en het creëren van berichten voor de robot. De precizie werking van dit onderdeel van de GUI is terug te vinden in het [software design document](https://github.com/LukevLuijn/robox_docs/blob/f1926df7065f7596bd7ae3ef2e1dc76c82e2e259/design/software/sdd/sdd_software.pdf) (Hoofdstuk 4.1 *Package - Driver*) (Bijlage X - sdd_software.pdf).
 
-Het tweede prototype was de [Logger](https://github.com/LukevLuijn/robox_docs/tree/main/prototypes/software/logger_test) (bijlage X - prot_software_logger). De logger is verantwoordelijk voor het weergeven van log berichten uit de applicatie (GUI) zelf (intern) en van de log berichten van de firmware (extern). Deze log berichten moesten per **severity* te sorteren zijn. Ook moesten de interne en externe berichten los van elkaar weergegeven worden.
-
-Het resultaat van dit prototype is te zien in de onderstaande afbeeldingen, De precieze werking van de logger en uitleg over de onderdelen is terug te vinden in het [SDD](https://github.com/LukevLuijn/robox_docs/blob/f1926df7065f7596bd7ae3ef2e1dc76c82e2e259/design/software/sdd/sdd_software.pdf) document (Hoofdstuk 4.2 *Package - Logger*) (bijlage X - sdd_software.pdf)
+Het tweede prototype was de [Logger](https://github.com/LukevLuijn/robox_docs/tree/main/prototypes/software/logger_test) (bijlage X - prot_software_logger). De logger is verantwoordelijk voor het weergeven van log berichten uit de applicatie (GUI) zelf (intern) en van de log berichten van de firmware (extern). Deze log berichten moesten per **severity* te sorteren zijn. Ook moesten de interne en externe berichten los van elkaar weergegeven worden. Het resultaat van dit prototype is te zien in de onderstaande afbeeldingen, De precieze werking van de logger en uitleg over de onderdelen is terug te vinden in het [SDD](https://github.com/LukevLuijn/robox_docs/blob/f1926df7065f7596bd7ae3ef2e1dc76c82e2e259/design/software/sdd/sdd_software.pdf) document (Hoofdstuk 4.2 *Package - Logger*) (bijlage X - sdd_software.pdf)
 
 |||
 |:---:|:---:|
@@ -359,7 +363,28 @@ Het resultaat van dit prototype is te zien in de onderstaande afbeeldingen, De p
 
 > ```*``` *Severity* De log berichten zijn onderverdeeld in vier gradaties; ERROR, WARNING, INFO & DEBUG.
 
-Het derde prototype was de eerder genoemde simulatie. Dit onderdeel is verantwoordelijk voor het weergeven van het in realtime weergeven van de huidige positie van het arm onderdeel van de robot. Verder is het verantwoordelijk voor het besturen van de arm in cartesiaanse coördinaten. Dit is mogelijk door de gripper in de simulatie te selecteren met de muis. De gripper kan vervolgens met de muis bewogen worden waardoor de andere assen mee bewegen.
+<div style="page-break-after: always;"></div>
+
+Het derde prototype was de eerder genoemde [Simulatie](https://github.com/LukevLuijn/robox_docs/tree/main/prototypes/software/robot_visual_test) (bijlage X - prot_software_visual). Dit onderdeel is verantwoordelijk voor het weergeven van het in realtime weergeven van de huidige positie van het arm onderdeel van de robot. Verder is het verantwoordelijk voor het besturen van de arm in cartesiaanse coördinaten. Dit is mogelijk door de gripper in de simulatie te selecteren met de muis. De gripper kan vervolgens met de muis bewogen worden waardoor de andere assen mee bewegen.
+
+Wanneer de robot met de muis bewogen wordt worden de bijhorende sliders en tekstvelden (A1 & A2) ook direct aangepast. Verder is de huidige positie van de gripper weergegeven in de simulatie. Hierdoor is het altijd duidelijk welke cartesiaanse coördinaten bij de huidige positie horen. In [dit](https://raw.githubusercontent.com/LukevLuijn/robox_docs/main/prototypes/software/robot_visual_test/clips/robox_visual_test_00.mp4) filmpje is de werking van de simulatie visueel weergegeven.
+
+De uiteindelijke uitwerking van de simulatie in de applicatie is terug te vinden in het [SDD](https://github.com/LukevLuijn/robox_docs/blob/f1926df7065f7596bd7ae3ef2e1dc76c82e2e259/design/software/sdd/sdd_software.pdf) (hoofdstuk *4.4 Package - frame*) (Bijlage X - sdd_software.pdf).
+
+
+<!-- |||
+|:---:|:---:|
+|<img width="300" src="assets/gui/rad/ui_visual.png"  alt="gui_rad_01"/>|<img width="315" src="assets/gui/actual/ui_visual_actual.png"  alt="gui_rad_02"/>|
+|**!afbeelding** - *Simulatie ontwerp*|**!afbeelding** - *Simulatie uitwerking*| -->
+
+### De grafische user interface
+
+Toen de verschillende prototypes uitgewerkt en gevalideerd waren is het geheel geïntegreerd. In het eind resultaat zijn de verschillende onderdelen geschrapt voor dit project. Zoals eerder verteld is het sequence paneel en de werking daarvan niet meer geïmplementeerd. De besturing door middel van het toetsenbord is in verband met tijdgebrek ook niet meer geïmplementeerd. De uiteindelijke GUI is in de onderstaande afbeelding te zien.
+
+||
+|:---:|
+|<img width="10000" src="assets/gui/actual/ui_actual_02.png"  alt="gui_rad_01"/>|
+|**!afbeelding** - *Grafische user interface*|
 
 
 
