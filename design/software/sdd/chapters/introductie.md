@@ -2,13 +2,11 @@ In dit document zal het ontwerp van de software beschreven worden. Eerst zal er 
 
 ## Doel en domein
 
-Dit onderdeel van het *ROBOX* project is bedoelt als fundering voor verdere ontwikkeling. Het is een basis opzet die gebruik maakt van de verschillende functionaliteiten van de ROBOX firmware. De software is opgezet met het idee dat toekomstige ontwikkelaars er zonder te veel moeite nieuwe elementen en functionaliteiten toe kunnen voegen.
+Dit onderdeel van het *ROBOX* project is bedoeld als fundering voor verdere ontwikkeling. Het is een basis opzet die gebruik maakt van de verschillende functionaliteiten van de ROBOX firmware. De software is opgezet met het idee dat toekomstige ontwikkelaars er zonder te veel moeite nieuwe elementen en functionaliteiten toe kunnen voegen.
 
 ## Doelgroep
 
-> TODO linkjes
-
-Het software design description document is geschreven voor de projectbegeleiding en eventueel andere (externe) belangstellende. In dit document wordt aangenomen dat de lezer een basis kennis van *UML* en software ontwikkeling heeft. Verder is het aangeraden om het Software requirements document van beide de firmware en de software door te nemen, ook het Software design description document van de firmware kan verheldering bieden tijdens het lezen van dit document.
+Het software design description document is geschreven voor de projectbegeleiding en eventueel andere (externe) belangstellende. In dit document wordt aangenomen dat de lezer een basis kennis van *UML* en softwareontwikkeling heeft. Verder is het aangeraden om het Software requirements document van beide de firmware en de software door te nemen, ook het Software design description document van de firmware kan verheldering bieden tijdens het lezen van dit document.
 
 ## Doel van het document
 

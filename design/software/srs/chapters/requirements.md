@@ -40,7 +40,7 @@ p.wont           {border:3px; border-style:solid; border-color:#DDDDDD; border-r
 |**FR-20**|<p class=must>Must</p>|De applicatie moet een melding geven wanneer een ingevoerd karakter niet toegestaan is.|:heavy_check_mark:|
 |**FR-21**|<p class=must>Must</p>|De applicatie moet een gevalideerde waarde in een tekst veld checken op basis van minimum waarde.|:heavy_check_mark:|
 |**FR-22**|<p class=must>Must</p>|De applicatie moet een gevalideerde waarde in een tekst veld checken op basis van maximum waarde.|:heavy_check_mark:|
-|**FR-23**|<p class=must>Must</p>|De applicatie moet alle onderdelen die dezelfde variable weergegeven tegelijkertijd updaten.|:heavy_check_mark:|
+|**FR-23**|<p class=must>Must</p>|De applicatie moet alle onderdelen die dezelfde variabele weergegeven tegelijkertijd updaten.|:heavy_check_mark:|
 |**FR-24**|<p class=must>Must</p>|De applicatie moet de mogelijkheid bieden tot het filteren van een bepaalde log gradatie.|:heavy_check_mark:|
 |**FR-25**|<p class=must>Must</p>|De applicatie moet de log berichten kunnen onderverdelen in vier verschillende gradaties; <span class=error>ERROR</span>, <span class=warning>WARNING</span>, <span class=info>INFO</span>, <span class=debug>DEBUG</span>.|:heavy_check_mark:|
 |**FR-26**|<p class=must>Must</p>|De applicatie moet ondersteuning bieden voor het loggen naar de console.|:heavy_check_mark:|
@@ -171,4 +171,4 @@ usability, reliability, performance en supportability, zijn in de onderstaande t
 
 
 
-!url https://www.doxygen.nl/manual/docblocks.html
+!url Doxygen. (z.d.). Doxygen Manual: Documenting the code. Geraadpleegd op 3 juni 2022, van [https://www.doxygen.nl/manual/docblocks.html](https://www.doxygen.nl/manual/docblocks.html)

@@ -48,7 +48,7 @@ span.x     {color:#79C6E2; border-radius:3px}
 - 3 [Usecase beschrijvingen](#chapter6)
 	- 3.1 [UC0 - Aansturen van de robot](#chapter7)
 		- 3.1.1 [UC0_0 - Aansturen door middel van hoeken](#chapter8)
-		- 3.1.2 [UC0_1 - Aansturen door middel van coordinaten](#chapter9)
+		- 3.1.2 [UC0_1 - Aansturen door middel van coördinaten](#chapter9)
 		- 3.1.3 [UC0_2 - Robot starten](#chapter10)
 		- 3.1.4 [UC0_3 - Robot stoppen](#chapter11)
 		- 3.1.5 [UC0_4 - Aansturen van de gripper](#chapter12)
@@ -75,16 +75,16 @@ span.x     {color:#79C6E2; border-radius:3px}
 |:---:|:---|:---|
 |00|**ROBOX/Robot**|Met deze term wordt het fysieke apparaat bedoelt.|
 |01|**Microcontroller**|Een [microcontroller](https://en.wikipedia.org/wiki/Microcontroller) (Wikipedia-bijdragers, 2022a) is een kleine computer die het mogelijk maakt om direct met de input en output pinnen te communiceren.|
-|02|**Clock/klok snelheid**|Hoe snel een processor (van bijvoorbeeld een microcontroller) een commando kan uit voeren per seconde. Een clocksnelheid van 16MHz staat dus voor 16.000.000 commando's per seconde (Wikipedia-bijdragers, 2020).|
+|02|**Clock/klok snelheid**|Hoe snel een processor (van bijvoorbeeld een microcontroller) een commando kan uit voeren per seconde. Een kloksnelheid van 16MHz staat dus voor 16.000.000 commando's per seconde (Wikipedia-bijdragers, 2020).|
 |03|**Computer**|Hiermee wordt een 'normale' computer bedoelt, bijvoorbeeld een laptop of desktop.|
 |04|**Software/overkoepelende software**|Hiermee wordt de bijhorende applicatie bedoelt.|
-|05|**Firmware**|De software die op een apparaat, bijvoorbeeld een microcontroller, draaid.|
+|05|**Firmware**|De software die op een apparaat, bijvoorbeeld een microcontroller, draait.|
 |06|**Actor**|De gebruiker van een systeem.|
 |07|**32 bits**|Deze term geeft aan hoeveel geheugen een processor tegelijkertijd kan aanspreken. 32 bits kan dus 2^32 waardes opslaan, een 8 bits architectuur kan maar 2^8 aantal waardes opslaan (Wikipedia-bijdragers, 2022a)|
 |08|**IC**|'integrated circuit' een chip die meestal op een printplaat verwerkt is.|
 |09|**Run time data**|De data velden die tijdens het afspelen van de applicatie veranderen.|
 |10|**Compile time data**|De data velden die op het moment van compileren bepaald worden en verder niet veranderen.|
-|11|**Serieele bus**|Een veegebruikt, maar ouderwets, protocol waarmee verschillende apparaaten, bijvoorbeeld via USB, data kunnen uitwisselen (Wikipedia-bijdragers, 2022).|
+|11|**Seriële bus**|Een veelgebruikt, maar ouderwets, protocol waarmee verschillende apparaten, bijvoorbeeld via USB, data kunnen uitwisselen (Wikipedia-bijdragers, 2022).|
 |12|**PWM**|'Pulse width modulation' Een blokgolf signaal die een bepaalde waarde kan weergeven, in dit geval een 8 bits waarde (0/255).|
 
 
@@ -94,7 +94,7 @@ span.x     {color:#79C6E2; border-radius:3px}
 # 2. Introductie <a name="chapter1"></a>
 
 
-Dit is het software requirements specification document van het firmware aspect van het ROBOX project. De firmware van dit project zal draaien op een microcontroller in de robot zelf. Deze firmware is verantwoordelijk voor het correct interperteren van de verschillende commandos afkomstig van de overkoepelende software draaiend op een verbonden computer. Verder is de firmware verantwoordelijk voor het waarborgen van de verschillende veiligheids eisen, eisen zoals tijdig stoppen, niet voorbij mini- en maximale waardes gaan en soortgelijke situaties.
+Dit is het software requirements specification document van het firmware aspect van het ROBOX project. De firmware van dit project zal draaien op een microcontroller in de robot zelf. Deze firmware is verantwoordelijk voor het correct interpreteren van de verschillende commando's afkomstig van de overkoepelende software draaiend op een verbonden computer. Verder is de firmware verantwoordelijk voor het waarborgen van de verschillende veiligheidseisen, eisen zoals tijdig stoppen, niet voorbij mini- en maximale waardes gaan en soortgelijke situaties.
 
 ## 2.1. Gebruikers, klassen en karakteristieken <a name="chapter2"></a>
 
@@ -108,7 +108,7 @@ Gezien microcontrollers een beperkte hoeveelheid RAM en Geheugen hebben zal er t
 
 De firmware zal ontwikkeld worden voor een moderne microcontroller met een degelijke clock snelheid. Een voorbeeld van een dergelijke microcontroller is bijvoorbeeld de [Teensy 4.0](https://www.pjrc.com/store/teensy40.html) (PJRC, n.d.), deze microcontroller beschikt over een 32 bits ARM IC met een clock snelheid van 600 MHz. Een voorbeeld van een niet geschikte microcontroller is bijvoorbeeld de [Arduino Uno](http://store.arduino.cc/products/arduino-uno-rev3) (Arduino, n.d.), deze microcontroller beschikt over een 8 bits ATmega IC met een clock snelheid van 16MHz.
 
-De gebruikte microcontroller zal verder moeten beschikken over een seriele bus die aangespreekbaar is over USB. De communicatie met de overkoepelende software zal hier namelijk gebruik van maken.
+De gebruikte microcontroller zal verder moeten beschikken over een seriële bus die aanspreekbaar is over USB. De communicatie met de overkoepelende software zal hier namelijk gebruik van maken.
 
 ## 2.4. Product functionaliteiten <a name="chapter5"></a>
 
@@ -121,28 +121,28 @@ De firmware zal verantwoordelijk zijn voor het aansturen en uitlezen van de vers
 # 3. Usecase beschrijvingen <a name="chapter6"></a>
 
 
-In het onderstaande diagram zijn de verschillende use cases te vinden omtrent de firmware. In dit diagram is (schematische) samenhang weergegeven van de verschillende onderdelen van het systeem en hoe de gebruiker (de driver) gebruik kan maken van het systeem.
+In het onderstaande diagram zijn de verschillende usecases te vinden omtrent de firmware. In dit diagram is (schematische) samenhang weergegeven van de verschillende onderdelen van het systeem en hoe de gebruiker (de driver) gebruik kan maken van het systeem.
 
 ||
 |:---:|
 |<img width="10000" src="assets/UC_firmware.svg"  alt="use case diagram firmware"/>|
-|**Diagram 1** - *Use case diagram Firmware*|
+|**Diagram 1** - *Usecase diagram Firmware*|
 
-In het diagram is te zien dat de verschillende use cases opgedeeld zijn in vier verschillende segmenten.
+In het diagram is te zien dat de verschillende usecases opgedeeld zijn in vier verschillende segmenten.
 
-Het eerste segment 'Aansturen van de robot' is verantwoordelijk voor alle use cases die betrekking hebben tot het bewegen van de robot. Denk hierbij aan het bewegen naar een bepaalde positie of het pauzeren van de robot.
+Het eerste segment 'Aansturen van de robot' is verantwoordelijk voor alle usecases die betrekking hebben tot het bewegen van de robot. Denk hierbij aan het bewegen naar een bepaalde positie of het pauzeren van de robot.
 
 Het tweede segment, 'Instellen van de configuratie', regelt het instellen van de robot. Bijvoorbeeld het instellen van de snelheid en acceleratie.
 
 Het derde segment 'Reageren op requests' is verantwoordelijk voor het opsturen van de data naar de driver. Het opsturen van de huidige positie is een voorbeeld hiervan.
 
-Tot slot het vierde onderdeel; 'Uitvoeren Estop'. Het uitvoeren van een noodstop zal een andere uitvoering krijgen dan de onderdelen vewerkt in 'Aansturen van de robot', en heeft hierdoor ook een appart segment.
+Tot slot het vierde onderdeel; 'Uitvoeren Estop'. Het uitvoeren van een noodstop zal een andere uitvoering krijgen dan de onderdelen verwerkt in 'Aansturen van de robot', en heeft hierdoor ook een apart segment.
 
 <div style="page-break-after: always;"></div>
 
 ## 3.1. UC0 - Aansturen van de robot <a name="chapter7"></a>
 
-In dit onderdeel zullen de verschillende use cases uit het onderdeel 'Aansturen van de robot' dieper toegelicht worden.
+In dit onderdeel zullen de verschillende usecases uit het onderdeel 'Aansturen van de robot' dieper toegelicht worden.
 
 ### 3.1.1. UC0_0 - Aansturen door middel van hoeken <a name="chapter8"></a>
 
@@ -164,14 +164,14 @@ In dit onderdeel zullen de verschillende use cases uit het onderdeel 'Aansturen 
 |||4a.|Het systeem zal een log bericht versturen waarin vermeld wordt dat de positie niet uitgevoerd kan worden.|
 ||**Alternative flow 02:**|||
 ||||*De robot is niet klaar om een nieuwe beweging uit te voeren.*|
-|||5a.|Het bericht wordt toegevoegd een een queue en op een later moment uitgevoerd worden.|
+|||5a.|Het bericht wordt toegevoegd een queue en op een later moment uitgevoerd worden.|
 |||||
 
 **Usecase 1** - *Fully dressed usecase description - UC00*
 
 <div style="page-break-after: always;"></div>
 
-### 3.1.2. UC0_1 - Aansturen door middel van coordinaten <a name="chapter9"></a>
+### 3.1.2. UC0_1 - Aansturen door middel van coördinaten <a name="chapter9"></a>
 
 |||
 |:---|:---|
@@ -183,7 +183,7 @@ In dit onderdeel zullen de verschillende use cases uit het onderdeel 'Aansturen 
 ||Actor action||System resposibility|
 |:---:|:---|:---:|:---|
 |1.|Geeft een nieuwe positie op.|2.|Verwerkt het ontvangen bericht.|
-|||3.|Berekent de hoeken op basis van de ontvangen coordinaten.|
+|||3.|Berekent de hoeken op basis van de ontvangen coördinaten.|
 |||4.|Kijkt of de posities binnen de uiterste waardes vallen.|
 |||5.|Kijkt of de robot klaar is om een beweging te maken.|
 |||6.|Beweegt de verschillende assen naar de berekende hoeken.|
@@ -192,7 +192,7 @@ In dit onderdeel zullen de verschillende use cases uit het onderdeel 'Aansturen 
 |||5a.|Het systeem zal een log bericht versturen waarin vermeld wordt dat de positie niet uitgevoerd kan worden.|
 ||**Alternative flow 02:**|||
 ||||*De robot is niet klaar om een nieuwe beweging uit te voeren.*|
-|||6a.|Het bericht wordt toegevoegd een een queue en op een later moment uitgevoerd worden.|
+|||6a.|Het bericht wordt toegevoegd een queue en op een later moment uitgevoerd worden.|
 |||||
 
 **Usecase 2** - *Fully dressed usecase description - UC01*
@@ -206,15 +206,15 @@ In dit onderdeel zullen de verschillende use cases uit het onderdeel 'Aansturen 
 |:---|:---|
 |Primary actor:|Driver|
 |Brief description:|Het systeem reageert op een inkomend bericht omtrent het starten van de robot, vervolgens zal het systeem de stappen ondernemen om de robot te starten.|
-|Preconditions:|Er is een serieele verbinding met de driver en de robot bevind zich in een onbekende positie, of net opgestart, of gestopt.|
+|Preconditions:|Er is een seriële verbinding met de driver en de robot bevind zich in een onbekende positie, of net opgestart, of gestopt.|
 |Postconditions:|De robot bevind zich in een bekende positie.|
 
 ||Actor action||System resposibility|
 |:---:|:---|:---:|:---|
 |1.|Stuurt een start commando.|2.|Verwerkt het ontvangen bericht.|
 |||3.|Voert de homing sequence uit voor de verschillende actuatoren in de robot.|
-|||4.|Update alle data, omtrent positioneering van de robot, naar de nieuwe waardes.|
-|||5.|Suurt een bericht naar de driver omtrent het voltooien van de homing sequence.|
+|||4.|Update alle data, omtrent positionering van de robot, naar de nieuwe waardes.|
+|||5.|Stuurt een bericht naar de driver omtrent het voltooien van de homing sequence.|
 
 **Usecase 3** - *Fully dressed usecase description - UC02*
 
@@ -233,12 +233,12 @@ In dit onderdeel zullen de verschillende use cases uit het onderdeel 'Aansturen 
 |:---:|:---|:---:|:---|
 |1.|Stuurt een stop commando.|2.|Verwerkt het ontvangen bericht.|
 |||3.|Kijkt of de robot klaar is om een beweging te maken.|
-|||4.|Beweeft de assen naar de verschillende 'idle'-posities.|
-|||5.|Deactiveerd de verschillende motoren in de robot.|
-|||6.|Verwijderd alle ge-queuede bewegings commando's uit het systeem.|
+|||4.|Beweegt de assen naar de verschillende 'idle'-posities.|
+|||5.|Deactiveert de verschillende motoren in de robot.|
+|||6.|Verwijderd alle ge-queuede bewegingscommando's uit het systeem.|
 ||**Alternative flow 01:**|||
 ||||*De robot is niet klaar om een nieuwe beweging uit te voeren.*|
-|||4a.|Het bericht wordt toegevoegd een een queue en op een later moment uitgevoerd worden.|
+|||4a.|Het bericht wordt toegevoegd een queue en op een later moment uitgevoerd worden.|
 ||||Zodra het bericht uitgevoerd wordt zal er gestart worden bij stap 4.|
 
 **Usecase 4** - *Fully dressed usecase description - UC03*
@@ -251,7 +251,7 @@ In dit onderdeel zullen de verschillende use cases uit het onderdeel 'Aansturen 
 |||
 |:---|:---|
 |Primary actor:|Driver|
-|Brief description:|Het systeem reageert op een inkomend beircht omtrent het aansturen van de gripper.|
+|Brief description:|Het systeem reageert op een inkomend bericht omtrent het aansturen van de gripper.|
 |Preconditions:|De robot heeft een 'start'-bericht ontvangen en verwerkt (bevind zich in een bekende positie).|
 |Postconditions:|De gripper is aangestuurd met de gevraagde PWM waarde.|
 
@@ -261,7 +261,7 @@ In dit onderdeel zullen de verschillende use cases uit het onderdeel 'Aansturen 
 |1.|Stuurt een nieuwe gripper waarde.|2.|Verwerkt het ontvangen bericht.|
 |||3.|Kijkt of de waarde binnen de uiterste vallen.|
 |||4.|Kijkt of de robot klaar is om een beweging te maken.|
-|||5.|Activeerdt de gripper met de opgegeven PWM waarde.|
+|||5.|Activeert de gripper met de opgegeven PWM waarde.|
 ||**Alternative flow 01:**|||
 ||||*De waarde valt niet binnen de uiterste.*|
 |||4a.|Er zal een bericht naar de driver gestuurd worden waarin vermeld wordt dat de opgegeven waardes niet uitgevoerd kunnen worden.|
@@ -278,7 +278,7 @@ In dit onderdeel zullen de verschillende use cases uit het onderdeel 'Aansturen 
 |||
 |:---|:---|
 |Primary actor:|Driver|
-|Brief description:|Het systeem reageert op een inkoment bericht omtrent het pauzeren van de robot. Het systeem zal de robot pauzeren voor de aangegeven tijd.|
+|Brief description:|Het systeem reageert op een inkomend bericht omtrent het pauzeren van de robot. Het systeem zal de robot pauzeren voor de aangegeven tijd.|
 |Preconditions:|De robot heeft een 'start'-bericht ontvangen en verwerkt (bevind zich in een bekende positie).|
 |Postconditions:|De robot heeft gepauzeerd voor de aangegeven tijd.|
 
@@ -302,7 +302,7 @@ De usecases die vallen onder dit onderdeel zijn allemaal soortgelijk in uitvoeri
 |:---|:---|
 |Primary actor:|Driver|
 |Brief description:|Het systeem verwerkt een configuratie bericht.|
-|Preconditions:|Er is een serieele verbinding met de driver.|
+|Preconditions:|Er is een seriële verbinding met de driver.|
 |Postconditions:|De configuratie is verwerkt in het systeem.|
 
 ||Actor action||System resposibility|
@@ -319,8 +319,8 @@ De usecases die vallen onder dit onderdeel zijn allemaal soortgelijk in uitvoeri
 |||
 |:---|:---|
 |Primary actor:|Driver|
-|Brief description:|Het systeem reageert op een inkomend data request bericht. Het systeem zal een reponse opzetten en terug sturen naar de driver.|
-|Preconditions:|Er is een serieele verbinding met de driver.|
+|Brief description:|Het systeem reageert op een inkomend data-request bericht. Het systeem zal een response opzetten en terug sturen naar de driver.|
+|Preconditions:|Er is een seriële verbinding met de driver.|
 |Postconditions:|Een response met de corresponderende data is verstuurd naar de driver.|
 
 ||Actor action||System resposibility|
@@ -336,15 +336,15 @@ De usecases die vallen onder dit onderdeel zijn allemaal soortgelijk in uitvoeri
 |||
 |:---|:---|
 |Primary actor:|Driver|
-|Brief description:|Het systeem ontvant een noodstop bericht en zal vervolgens direct alle beweging van de robot staken.|
-|Preconditions:|Er is een serieele verbinding met de driver.|
+|Brief description:|Het systeem ontvangt een noodstop bericht en zal vervolgens direct alle beweging van de robot staken.|
+|Preconditions:|Er is een seriële verbinding met de driver.|
 |Postconditions:|De robot is direct gestopt en alle motoren zijn uitgeschakeld.|
 
 ||Actor action||System resposibility|
 |:---:|:---|:---:|:---|
 |1.|Stuurt een 'noodstop'-bericht.|2.|Identificeert het bericht als 'noodstop'.|
-|||3.|Schakeld direct alle motoren uit.|
-|||4.|Verwijderd alle opgeslagen bewegingsberichten uit de queue.|
+|||3.|Schakelt direct alle motoren uit.|
+|||4.|Verwijderd alle opgeslagen bewegings-berichten uit de queue.|
 
 **Usecase 9** - *Fully dressed usecase description - UC*
 
@@ -378,11 +378,11 @@ In dit hoofdstuk zullen de verschillende (niet-) functionele requirements beschr
 |**FR-01**|<p class=must>Must</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de maximale positie per motor.|:heavy_check_mark:|
 |**FR-02**|<p class=must>Must</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de minimale positie per motor.|:heavy_check_mark:|
 |**FR-03**|<p class=must>Must</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de huidige snelheid per motor.|:heavy_check_mark:|
-|**FR-04**|<p class=must>Must</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de huidgie acceleratie per motor.|:heavy_check_mark:|
+|**FR-04**|<p class=must>Must</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de huidige acceleratie per motor.|:heavy_check_mark:|
 |**FR-05**|<p class=must>Must</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de huidige positie per motor.|:heavy_check_mark:|
 |**FR-06**|<p class=must>Must</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de huidige gripper PWM waarde.|:heavy_check_mark:|
 |**FR-07**|<p class=must>Must</p>|Het systeem moet de mogelijkheid bieden tot het bewegen van de robot aan de hand van verschillende hoeken.|:heavy_check_mark:|
-|**FR-08**|<p class=must>Must</p>|Het systeem oet de mogelijkheid bieden tot het bewegen van de robot aan de hand van een cartesiaanse positie (x,y,z).|:heavy_check_mark:|
+|**FR-08**|<p class=must>Must</p>|Het systeem moet de mogelijkheid bieden tot het bewegen van de robot aan de hand van een cartesiaanse positie (x,y,z).|:heavy_check_mark:|
 |**FR-09**|<p class=must>Must</p>|Het systeem moet de mogelijkheid bieden tot het instellen van de huidige gripper PWM waarde.|:heavy_check_mark:|
 |**FR-10**|<p class=must>Must</p>|Het systeem moet de mogelijkheid bieden tot het stoppen van de robot.|:heavy_check_mark:|
 |**FR-11**|<p class=must>Must</p>|Het systeem moet de mogelijkheid bieden tot het direct stoppen van de robot (noodstop).|:heavy_check_mark:|
@@ -390,7 +390,7 @@ In dit hoofdstuk zullen de verschillende (niet-) functionele requirements beschr
 |**FR-13**|<p class=should>Should</p>|Het systeem moet de mogelijkheid bieden tot het instellen van globale snelheid.|:heavy_check_mark:|
 |**FR-14**|<p class=should>Should</p>|Het systeem moet de mogelijkheid bieden tot het instellen van globale acceleratie.|:heavy_check_mark:|
 |**FR-15**|<p class=should>Should</p>|Het systeem moet de mogelijkheid bieden tot het instellen van de snelheid per motor.|:heavy_check_mark:|
-|**FR-16**|<p class=should>Should</p>|Het systeem moet de mogelijkheid bieden tot het instellen van de accleratie per motor.|:heavy_check_mark:|
+|**FR-16**|<p class=should>Should</p>|Het systeem moet de mogelijkheid bieden tot het instellen van de acceleratie per motor.|:heavy_check_mark:|
 |**FR-17**|<p class=should>Should</p>|Het systeem moet de mogelijkheid bieden tot het (de)activeren van de *error* berichten.|:heavy_check_mark:|
 |**FR-18**|<p class=should>Should</p>|Het systeem moet de mogelijkheid bieden tot het (de)activeren van de *warning* berichten.|:heavy_check_mark:|
 |**FR-19**|<p class=should>Should</p>|Het systeem moet de mogelijkheid bieden tot het (de)activeren van de *info* berichten.|:heavy_check_mark:|
@@ -401,9 +401,9 @@ In dit hoofdstuk zullen de verschillende (niet-) functionele requirements beschr
 |**FR-24**|<p class=should>Should</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de huidige **frame height offset*.|:heavy_check_mark:|
 |**FR-25**|<p class=should>Should</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de huidige **gripper height offset*.|:heavy_check_mark:|
 |**FR-26**|<p class=should>Should</p>|Het systeem moet de mogelijkheid bieden tot het opvragen of een motor momenteel actief is (aan het bewegen).|:heavy_check_mark:|
-|**FR-27**|<p class=should>Should</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de huidige positie van de gripper in het cartesiaans coordinaten systeem (x,y,z).|:heavy_check_mark:|
+|**FR-27**|<p class=should>Should</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de huidige positie van de gripper in het cartesiaans coördinaten systeem (x,y,z).|:heavy_check_mark:|
 |**FR-28**|<p class=should>Should</p>|Het systeem moet de mogelijkheid bieden tot het pauzeren van de robot voor een bepaald aantal milliseconden.|:heavy_check_mark:|
-|**FR-29**|<p class=should>Should</p>|Het systeem moet de gebruiker laten weten waneer een aangevraagde positie niet bereikbaar is. Bijvoorbeeld door een log bericht.|:heavy_check_mark:|
+|**FR-29**|<p class=should>Should</p>|Het systeem moet de gebruiker laten weten wanneer een aangevraagde positie niet bereikbaar is. Bijvoorbeeld door een log bericht.|:heavy_check_mark:|
 |**FR-30**|<p class=should>Should</p>|Het systeem moet de gebruiker laten weten wanneer een aangevraagde gripper waarde niet mogelijk is, bijvoorbeeld door een log bericht.|:heavy_check_mark:|
 |**FR-31**|<p class=should>Should</p>|Het systeem moet de gebruiker laten weten wanneer een aangevraagde snelheid niet mogelijk is, bijvoorbeeld door een log bericht.|:heavy_check_mark:|
 |**FR-32**|<p class=should>Should</p>|Het systeem moet de gebruiker laten weten wanneer een aangevraagde acceleratie niet mogelijk is, bijvoorbeeld door een log bericht.|:heavy_check_mark:|
@@ -411,7 +411,7 @@ In dit hoofdstuk zullen de verschillende (niet-) functionele requirements beschr
 |**FR-34**|<p class=could>Could</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de verschillende pin configuraties.|:heavy_check_mark:|
 |**FR-35**|<p class=could>Could</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de microstepping resolutie per motor.|:heavy_check_mark:|
 |**FR-36**|<p class=could>Could</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de **steps per degree* waarde per radiale actuator.|:heavy_check_mark:|
-|**FR-37**|<p class=could>Could</p>|Het systeem moet de mogelijkheid bieden tot het opvrgane van de **steps per millimeter* waarde per lineare actuator. |:heavy_check_mark:|
+|**FR-37**|<p class=could>Could</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de **steps per millimeter* waarde per lineaire actuator. |:heavy_check_mark:|
 |**FR-38**|<p class=could>Could</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de status van *error* berichten.|:heavy_check_mark:|
 |**FR-39**|<p class=could>Could</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de status van *warning* berichten.|:heavy_check_mark:|
 |**FR-40**|<p class=could>Could</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de status van *info* berichten.|:heavy_check_mark:|
@@ -435,7 +435,7 @@ In dit hoofdstuk zullen de verschillende (niet-) functionele requirements beschr
 
 ## 4.2. Niet functionele requirements <a name="chapter19"></a>
 
-In dit onderdeel worden de niet functionele requirements verder toegelicht. De niet functionele requirements zijn onderverdeeld op basis van quality of service (QoS). De verschillende QoS elementen; usability, reliability, performance en supportability, zijn in de onderstaande tabel uitgwerkt.
+In dit onderdeel worden de niet functionele requirements verder toegelicht. De niet functionele requirements zijn onderverdeeld op basis van quality of service (QoS). De verschillende QoS elementen; usability, reliability, performance en supportability, zijn in de onderstaande tabel uitgewerkt.
 
 ### 4.2.1. QoS - Usability <a name="chapter20"></a>
 
@@ -446,7 +446,7 @@ In dit onderdeel worden de niet functionele requirements verder toegelicht. De n
 |**NFR-03**|<p class=must>Must</p>|*Safety*|Het systeem zal logs met de prioriteit: <span class=info>INFO</span> naar de gebruiker sturen, indien de gebruiker dit niet specifiek heeft gedeactiveerd.|:heavy_check_mark:|
 |**NFR-04**|<p class=must>Must</p>|*Safety*|Het systeem zal logs met de prioriteit: <span class=debug>DEBUG</span> naar de gebruiker sturen, indien de gebruiker dit niet specifiek heeft gedeactiveerd.|:heavy_check_mark:|
 |**NFR-05**|<p class=must>Must</p>|*Quality*|Alle publieke methodes in het systeem zullen voorzien worden van beschrijvend [doxygen](https://www.doxygen.nl/manual/docblocks.html) (Doxygen, n.d.) commentaar.|:heavy_check_mark:|
-|**NFR-06**|<p class=must>Must</p>|*Quality*|Commentaar in code zal geschreven worden in de voertaal: engels.|:heavy_check_mark:|
+|**NFR-06**|<p class=must>Must</p>|*Quality*|Commentaar in code zal geschreven worden in de voertaal: Engels.|:heavy_check_mark:|
 |**NFR-07**|<p class=should>Should</p>|*Quality*|De verschillende onderdelen in het systeem zullen worden onderverdeeld in namespaces.|:heavy_check_mark:|
 |**NFR-08**|<p class=should>Should</p>|*Quality*|De verschillende header documenten (*.h) zullen worden gegroepeerd op basis van namespace.|:heavy_check_mark:|
 |**NFR-09**|<p class=could>Could</p>|*Quality*|De applicatie zal voorzien worden van een installatiehandleiding.|:heavy_multiplication_x:|
@@ -461,11 +461,11 @@ In dit onderdeel worden de niet functionele requirements verder toegelicht. De n
 |Index|Prioriteit|Onderdeel|Requirement|Voldaan|
 |:---:|:---:|:---:|:---|:---:|
 |**NFR-13**|<p class=must>Must</p>|*Reliability*|Het systeem zal voorzien zijn van mini- en maximale positionele waardes per motor.|:heavy_check_mark:|
-|**NFR-14**|<p class=must>Must</p>|*Reliability*|Het systeem zal rekening houden met de mini- en maximale positionele waardes door deze niet te overschreiden.|:heavy_check_mark:|
+|**NFR-14**|<p class=must>Must</p>|*Reliability*|Het systeem zal rekening houden met de mini- en maximale positionele waardes door deze niet te overschrijden.|:heavy_check_mark:|
 |**NFR-15**|<p class=must>Must</p>|*Reliability*|Het systeem zal voorzien zijn van mini- en maximale snelheids waardes per motor.|:heavy_check_mark:|
-|**NFR-16**|<p class=must>Must</p>|*Reliability*|Het systeem zal rekening houden met de mini- en maximale snelheids waardes door deze niet te overschreiden. |:heavy_check_mark:|
+|**NFR-16**|<p class=must>Must</p>|*Reliability*|Het systeem zal rekening houden met de mini- en maximale snelheids waardes door deze niet te overschrijden. |:heavy_check_mark:|
 |**NFR-17**|<p class=must>Must</p>|*Reliability*|Het systeem zal voorzien zijn van mini- en maximale acceleratie waardes per motor.|:heavy_check_mark:|
-|**NFR-18**|<p class=must>Must</p>|*Reliability*|Het systeem zal rekening houden mde mini- en maximale accelerate waardes door deze niet te overschreiden.|:heavy_check_mark:|
+|**NFR-18**|<p class=must>Must</p>|*Reliability*|Het systeem zal rekening houden met de mini- en maximale acceleratie waardes door deze niet te overschrijden.|:heavy_check_mark:|
 |**NFR-19**|<p class=must>Must</p>|*Safety*|Het systeem zal binnen 100 milliseconden tot stilstand komen in het geval van een noodstop.|:heavy_check_mark:|
 |**NFR-20**|<p class=could>Could</p>|*Reliability*|Het systeem zal altijd hetzelfde pad volgen vanaf een positie A naar een positie B|:heavy_check_mark:|
 
@@ -477,7 +477,7 @@ In dit onderdeel worden de niet functionele requirements verder toegelicht. De n
 
 |Index|Prioriteit|Onderdeel|Requirement|Voldaan|
 |:---:|:---:|:---:|:---|:---:|
-|**NFR-21**|<p class=must>Must</p>|*Timeliness*|Het systeem zal binnen 100 milliseconden en beweginscommando uitvoeren indien er geen andere beweginscommando's in de wachtrij staan.|:heavy_check_mark:|
+|**NFR-21**|<p class=must>Must</p>|*Timeliness*|Het systeem zal binnen 100 milliseconden en bewegingscommando uitvoeren indien er geen andere bewegingscommando's in de wachtrij staan.|:heavy_check_mark:|
 |**NFR-22**|<p class=must>Must</p>|*Timeliness*|Het systeem zal binnen 20 milliseconden een response hebben verstuurd wanneer er een data request ontvangen is.|:heavy_check_mark:|
 
 **Tabel 4** - *niet functionele requirements - QoS Performance*

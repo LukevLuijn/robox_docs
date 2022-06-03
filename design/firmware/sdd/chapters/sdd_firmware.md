@@ -65,18 +65,18 @@ span.x     {color:#79C6E2; border-radius:3px}
 |Index|Term|Beschrijving|
 |:---:|:---|:---|
 |00|**ROBOX/ Robot**|Met deze term wordt de fysieke robot ofwel het apparaat bedoelt.|
-|01|**UML**|*Unified modeling language* De taal die gebruikt wordt voor het modeleren van een software systeem.|
+|01|**UML**|*Unified modeling language* De taal die gebruikt wordt voor het modelleren van een software systeem.|
 |02|**SRS**|*Software requirements specification* Het ontwerp document van de geschreven software.|
 |03|**Package/ Namespace**|Een groepering van software componenten die een soortgelijk doel nastreven.|
 |04|**Coupling**|De graad van samenhang tussen verschillende componenten in een systeem (Wikipedia contributors, 2022a).|
 |05|**Overkoepelende systeem/ gebruiker**|Met deze term wordt de grafische user interface bedoelt.|
-|06|**Serieele bus**|Een veegebruikt, maar ouderwets, protocol waarmee verschillende apparaaten, bijvoorbeeld via USB, data kunnen uitwisselen (Wikipedia-bijdragers, 2022).|
+|06|**Seriële bus**|Een veelgebruikt, maar ouderwets, protocol waarmee verschillende apparaten, bijvoorbeeld via USB, data kunnen uitwisselen (Wikipedia-bijdragers, 2022).|
 |07|**Parsen**|Het uitlezen van een [ASCII](https://en.wikipedia.org/wiki/ASCII) string, om hier vervolgens de correcte waardes uit te halen.|
-|08|**Singleton pattern**|Een design pattern die het mogelijk maakt om precies een instantie van een class te hebben (Sourcemaking, z.d.-a). |
+|08|**Singleton pattern**|Een design pattern die het mogelijk maakt om precies een instantie van een klasse te hebben (Sourcemaking, z.d.-a). |
 |09|**Facade pattern**|Een design pattern die complexe (sub) systemen verbergt en de functionaliteit toegankelijk maakt door middel van een 'deur'-class (Sourcemaking, z.d.-b).|
 |10|**State pattern**|Een design pattern die het mogelijk maakt op een elegante manier verschillende functionaliteiten uit te voeren op basis van verschillende inputs (Sourcemaking, z.d.-c).|
 |11|**Homing**|De robot weet niet in welke positie de stepper motoren zich bevinden. Door een homing sequence uit te voeren weet de robot waar de motoren zich precies bevinden. Na een homing sequence kunnen er dus exacte bewegingen gedaan worden.|
-|12|**Blokeren**|Het ophouden van de algemene 'flow' van de applicatie. Als iets blokerend is staat verder alles stil tot de blokade is verholpen.|
+|12|**Blokkeren**|Het ophouden van de algemene 'flow' van de applicatie. Als iets blokkerend is staat verder alles stil tot de blokkade is verholpen.|
 |13|**Severity**|De rangschikking van de log berichten. ERROR > WARNING > INFO > DEBUG.|
 
 
@@ -84,34 +84,33 @@ span.x     {color:#79C6E2; border-radius:3px}
 # 2. Introductie <a name="chapter1"></a>
 
 
-In dit document zal het ontwerp van de firmware beschreven worden. Hoe deze applicatie in essentie uitgewertk is.
+In dit document zal het ontwerp van de firmware beschreven worden. Hoe deze applicatie in essentie uitgewerkt is.
 
 ## 2.1. Doel en domein <a name="chapter2"></a>
 
-Dit project, ROBOX, dient als een initieele opzet voor een groeiend project. De firmware zal in de toekomst verder uitgebereid en verbetert worden of door de ontwikkelaar zelf of door externe belangstellende. Het doel van de huidige itteratie is om een goed werkend product te ontwikkelen dat de basis functionaliteit implementeerd.
+Dit project, ROBOX, dient als een initiële opzet voor een groeiend project. De firmware zal in de toekomst verder uitgebreid en verbetert worden of door de ontwikkelaar zelf of door externe belangstellende. Het doel van de huidige iteratie is om een goed werkend product te ontwikkelen dat de basis functionaliteit implementeert.
 
 ## 2.2. Doelgroep <a name="chapter3"></a>
 
-Het Software design description document is geschreven voor de projectbelgeleiding en eventueel andere (externe) belangstellende. In dit document wordt aangenomen dat de lezer een basis kennis bevat van UML en software ontwikkeling. Ook wordt er vanuit gegaan dat de lezer kennis heeft van het [SRS](linkje) document gemaakt voor de firmware. 
+Het Software design description document is geschreven voor de projectbegeleiding en eventueel andere (externe) belangstellende. In dit document wordt aangenomen dat de lezer een basis kennis bevat van UML en softwareontwikkeling. Ook wordt er vanuit gegaan dat de lezer kennis heeft van het [SRS](https://github.com/LukevLuijn/robox_docs/blob/f1926df7065f7596bd7ae3ef2e1dc76c82e2e259/design/firmware/srs/srs_firmware.pdf) document gemaakt voor de firmware. 
 
 ## 2.3. Doel van het document <a name="chapter4"></a>
 
-Dit document is opgezet om een duidelijk beeld te creeeren van de werking van het product. In dit document worden de verschillende componenten toegelicht aan de hand van class diagrams en eventueel sequence diagrams.
+Dit document is opgezet om een duidelijk beeld te creëren van de werking van het product. In dit document worden de verschillende componenten toegelicht aan de hand van class diagrams en eventueel sequence diagrams.
 
 <div style="page-break-after: always;"></div>
 
 
 # 3. Architectural overview <a name="chapter5"></a>
 
-
-De firmware applicatie is onderverdeeld in meerdere *packages*, ook wel *namespaces*. Het algemene overzicht van de gehele applicatie is weergegeven aan de hand van een design class diagram (zie onderstaand). Vervolgens is er per package een class diagram opgesteld met een bijhorende beschrijving, deze volgen in de onderstaande onderdelen.
+De firmware applicatie is onderverdeeld in meerdere *packages*, ook wel *namespaces*. Het algemene overzicht van de gehele applicatie is weergegeven aan de hand van een design klasse diagram (zie onderstaand). Vervolgens is er per package een klasse diagram opgesteld met een bijhorende beschrijving, deze volgen in de onderstaande onderdelen.
 
 |                                                                        |
 | :--------------------------------------------------------------------: |
 | <img width="10000" src="assets/DCD_firmware.svg"  alt="dcd_firmware"/> |
 |      **Diagram 1** - *Design class diagram - Firmware applicatie*       |
 
-Zoals te zien in het bovenstaande diagram is de applicatie geschreven met een minimale *coupling* in het achterhoofd. Deze minimale coupling is gerealiseerd door waar mogelijk gebruik te maken van een *facade pattern*. Een voorbeeld van dit design pattern is te zien bij de class Reader en Robot, beide deze klaseen fungeren als deur naar een dieper complex systeem. Hierover is meer te lezen in de onderstaande onderdelen.
+Zoals te zien in het bovenstaande diagram is de applicatie geschreven met een minimale *coupling* in het achterhoofd. Deze minimale coupling is gerealiseerd door waar mogelijk gebruik te maken van een *facade pattern*. Een voorbeeld van dit design pattern is te zien bij de klasse Reader en Robot, beide deze klasse fungeren als deur naar een dieper complex systeem. Hierover is meer te lezen in de onderstaande onderdelen.
 
 <div style="page-break-after: always;"></div>
 
@@ -125,9 +124,9 @@ Zoals te zien in het bovenstaande diagram is de applicatie geschreven met een mi
 | <img width="10000" src="assets/CD_communication.svg"  alt="cd_communication"/> |
 |          **Diagram 2** - *Class diagram - Communication package*           |
 
-De package [**Communication**](https://github.com/LukevLuijn/robox/tree/main/robox_firmware_v0.1/include/communication) is verandtwoordelijk voor de communicatie met de het *overkoepelende systeem*. Het regelt beide het schrijven en lezen over de *serieele bus*. De communicatie is gebaseerd op de klasse [**Message**](https://github.com/LukevLuijn/robox/blob/98aca16f7c2ca8de0ee4921713f2d635fee8d508/robox_firmware_v0.1/include/communication/Message.h#L83), deze class is in essentie een buffer voor een inkomend bericht. Een message bestaat uit een [**Header**](https://github.com/LukevLuijn/robox/blob/98aca16f7c2ca8de0ee4921713f2d635fee8d508/robox_firmware_v0.1/include/communication/Message.h#L18) en een [**Body**](https://github.com/LukevLuijn/robox/blob/98aca16f7c2ca8de0ee4921713f2d635fee8d508/robox_firmware_v0.1/include/communication/Message.h#L48). De Header bevat het type bericht en de variant van dit type (zie [message protocol](linkje)). De body bevat eventueele parameters die het bericht bevat. De klasse [**DataManager**](https://github.com/LukevLuijn/robox/blob/main/robox_firmware_v0.1/include/communication/DataMenagement.h) is verantwoordelijk voor het correct *parsen* en opstellen van de berichten. Deze functionaliteit is gebasseerd op het *message protocol*.
+De package [**Communication**](https://github.com/LukevLuijn/robox/tree/main/robox_firmware_v0.1/include/communication) is verandtwoordelijk voor de communicatie met het *overkoepelende systeem*. Het regelt beide het schrijven en lezen over de *seriële bus*. De communicatie is gebaseerd op de klasse [**Message**](https://github.com/LukevLuijn/robox/blob/98aca16f7c2ca8de0ee4921713f2d635fee8d508/robox_firmware_v0.1/include/communication/Message.h#L83), deze klasse is in essentie een buffer voor een inkomend bericht. Een message bestaat uit een [**Header**](https://github.com/LukevLuijn/robox/blob/98aca16f7c2ca8de0ee4921713f2d635fee8d508/robox_firmware_v0.1/include/communication/Message.h#L18) en een [**Body**](https://github.com/LukevLuijn/robox/blob/98aca16f7c2ca8de0ee4921713f2d635fee8d508/robox_firmware_v0.1/include/communication/Message.h#L48). De Header bevat het type bericht en de variant van dit type (zie [message protocol](linkje)). De body bevat eventuele parameters die het bericht bevat. De klasse [**DataManager**](https://github.com/LukevLuijn/robox/blob/main/robox_firmware_v0.1/include/communication/DataMenagement.h) is verantwoordelijk voor het correct *parsen* en opstellen van de berichten. Deze functionaliteit is gebaseerd op het *message protocol*.
 
-De class [**Reader**](https://github.com/LukevLuijn/robox/blob/main/robox_firmware_v0.1/include/communication/Reader.h) is de class die daadwerkelijk de inkomende berichten leest. Omdat de serieele bus maar op een enkele locatie tegelijk aangesproken kan worden is er bij deze class gebruik gemaakt van een *singleton pattern*. Deze class kijkt continue naar de serieele bus, als er een bericht beschikbaar is zal deze gecontroleerd worden op basis van het *message protocol* en, indien goedgekeurd, gesorteerd worden in de messageQueue. Tijdens het sorteren zal er gekeken worden naar de header van de message. Als blijkt dat de header van de message een datatype is (DataType_e) zal dit bericht direct afgehandeld worden door een response te creeeren. Als het een E-Stop bericht te zijn zullen de motoren direct ge-deactiveerd worden en wordt de gehele messageQueue geleegd zodat de robot stopt met bewegen en ook niet meer verder gaat. Als dit beide niet het geval is zal het bericht aan de messageQueue worden toegevoegd. Wanneer de state machine gereed is om eem beweging te maken zal de messageQueue worden afgehandeld.
+De klasse [**Reader**](https://github.com/LukevLuijn/robox/blob/main/robox_firmware_v0.1/include/communication/Reader.h) is de klasse die daadwerkelijk de inkomende berichten leest. Omdat de seriële bus maar op een enkele locatie tegelijk aangesproken kan worden is er bij deze klasse gebruik gemaakt van een *singleton pattern*. Deze klasse kijkt continue naar de seriële bus, als er een bericht beschikbaar is zal deze gecontroleerd worden op basis van het *message protocol* en, indien goedgekeurd, gesorteerd worden in de messageQueue. Tijdens het sorteren zal er gekeken worden naar de header van de message. Als blijkt dat de header van de message een datatype is (DataType_e) zal dit bericht direct afgehandeld worden door een response te creëren. Als het een E-Stop bericht te zijn zullen de motoren direct gedeactiveerd worden en wordt de gehele messageQueue geleegd zodat de robot stopt met bewegen en ook niet meer verder gaat. Als dit beide niet het geval is zal het bericht aan de messageQueue worden toegevoegd. Wanneer de state machine gereed is om een beweging te maken zal de messageQueue worden afgehandeld.
 
 <div style="page-break-after: always;"></div>
 
@@ -136,19 +135,19 @@ De class [**Reader**](https://github.com/LukevLuijn/robox/blob/main/robox_firmwa
 
 |||
 |:---|:---|
-|**Probleem**|De serieele bus mag maar door een instantie tegelijk aangesproken worden.|
+|**Probleem**|De seriële bus mag maar door een instantie tegelijk aangesproken worden.|
 |**Besluit**|Er is voor een singleton pattern gekozen.|
 |**Alternatieve**|Handmatig bijhouden welke instantie wanneer de serieele bus aanspreekt.|
-|**Argumenten**|Een singleton class heeft als eigenschap dat er altijd precies 1 instantie, dezelfde, actief is in de applicatie.|
+|**Argumenten**|Een singleton klasse heeft als eigenschap dat er altijd precies 1 instantie, dezelfde, actief is in de applicatie.|
 
 **Tabel 1** - *Communication - ontwerp keuze 1*
 
 |||
 |:---|:---|
 |**Probleem**|Hoe verzeker je dat de applicatie alle inkomende berichten altijd op dezelfde manier verwerkt (*parsed*)?|
-|**Besluit**|Het opstellen van een **Message** class. De class kan maar op een manier aangemaakt worden en is dus naast de inhoud altijd hetzelfde.|
+|**Besluit**|Het opstellen van een **Message** klasse. De klasse kan maar op een manier aangemaakt worden en is dus naast de inhoud altijd hetzelfde.|
 |**Alternatieve**|Het individueel parsen van de inkomende berichten waar nodig.|
-|**Argumenten**|Door een **Message** te maken is er een gestandardizeerde methode om berichten te maken en uit te lezen. Dit maakt het voor de huidige en toekomste classe makkelijk om om te gaan met de serieele communicatie.|
+|**Argumenten**|Door een **Message** te maken is er een gestandaardiseerde methode om berichten te maken en uit te lezen. Dit maakt het voor de huidige en toekomstige klasse makkelijk om om te gaan met de seriële communicatie.|
 
 **Tabel 2** - *Communication - ontwerp keuze 2*
 
@@ -156,7 +155,7 @@ De class [**Reader**](https://github.com/LukevLuijn/robox/blob/main/robox_firmwa
 |:---|:---|
 |**Probleem**|Hoe zorg je dat de berichten verstuurd tussen de applicaties altijd op dezelfde manier opgesteld zijn?|
 |**Besluit**|Het opstellen van een bestand message protocol ([**msg_protocol.h**](https://github.com/LukevLuijn/robox/blob/main/robox_firmware_v0.1/include/config/msg_protocol.h)), en dit bestand vervolgens voor beide applicaties gebruiken.|
-|**Alternatieve**|Erg goed opletten dat de berichten altijd volgens het zelfde patroon verlopen.|
+|**Alternatieve**|Erg goed opletten dat de berichten altijd volgens hetzelfde patroon verlopen.|
 |**Argumenten**|Door een protocol op te stellen is het makkelijker om een correct geformuleerd bericht op te zetten. Het uitlezen van berichten is hierdoor ook veel minder *'error-prone'*.|
 
 **Tabel 3** - *Communication - ontwerp keuze 3*
@@ -171,9 +170,9 @@ De class [**Reader**](https://github.com/LukevLuijn/robox/blob/main/robox_firmwa
 | <img width="10000" src="assets/CD_statemachine.svg"  alt="cd_statemachine"/> |
 |          **Diagram 3** - *Class diagram - State machine package*           |
 
-De package [**State Machine**](https://github.com/LukevLuijn/robox/tree/main/robox_firmware_v0.1/include/state_machine) is verantwoordelijk voor de opzet en uitwerking van de statemachine. Deze package is een uitwerking van de *state pattern*. Door gebruik te maken van een state machine is het makkelijk om op basis van een bepaalde input (een serieel bericht) een bepaalde functionalteit uit te voeren.
+De package [**State Machine**](https://github.com/LukevLuijn/robox/tree/main/robox_firmware_v0.1/include/state_machine) is verantwoordelijk voor de opzet en uitwerking van de statemachine. Deze package is een uitwerking van de *state pattern*. Door gebruik te maken van een state machine is het makkelijk om op basis van een bepaalde input (een serieel bericht) een bepaalde functionaliteit uit te voeren.
 
-De class [**State**](https://github.com/LukevLuijn/robox/blob/main/robox_firmware_v0.1/include/state_machine/State.h) is een abstrace uitwerking van een state. Het is de bedoeling dat deze in de daadwerkelijke applicatie uitgewerkt wordt (zie Package - Base). De class [**Event**](https://github.com/LukevLuijn/robox/blob/main/robox_firmware_v0.1/include/state_machine/Event.h) fungeert als een trigger. Aan de hand van deze class kunnen verschillende transities getriggerd worden binnen de state machine. Tot slot de class [**Context**](https://github.com/LukevLuijn/robox/blob/main/robox_firmware_v0.1/include/state_machine/Context.h). De Context class regelt de samenhang tussen state en event. Deze class bevat een lijst met events die een voor een afgehandeld worden. Ook heeft deze class een instantie van de huidige state. Context is ook verantwoordelijk voor het uitvoeren van de transties tusses states.
+De klasse [**State**](https://github.com/LukevLuijn/robox/blob/main/robox_firmware_v0.1/include/state_machine/State.h) is een abstracte uitwerking van een state. Het is de bedoeling dat deze in de daadwerkelijke applicatie uitgewerkt wordt (zie Package - Base). De klasse [**Event**](https://github.com/LukevLuijn/robox/blob/main/robox_firmware_v0.1/include/state_machine/Event.h) fungeert als een trigger. Aan de hand van deze klasse kunnen verschillende transities getriggerd worden binnen de state machine. Tot slot de klasse [**Context**](https://github.com/LukevLuijn/robox/blob/main/robox_firmware_v0.1/include/state_machine/Context.h). De Context klasse regelt de samenhang tussen state en event. Deze klasse bevat een lijst met events die een voor een afgehandeld worden. Ook heeft deze klasse een instantie van de huidige state. Context is ook verantwoordelijk voor het uitvoeren van de transities tussen states.
 
 ### 4.2.1. Ontwerp keuzes <a name="chapter10"></a>
 
@@ -188,7 +187,6 @@ De class [**State**](https://github.com/LukevLuijn/robox/blob/main/robox_firmwar
 
 <div style="page-break-after: always;"></div>
 
-
 ## 4.3. Package - Device  <a name="chapter11"></a>
 
 |                                                                                |
@@ -196,16 +194,16 @@ De class [**State**](https://github.com/LukevLuijn/robox/blob/main/robox_firmwar
 | <img width="10000" src="assets/CD_device.svg"  alt="cd_device"/> |
 |          **Diagram 4** - *Class diagram - Device package*           |
 
-De package [**Device**](https://github.com/LukevLuijn/robox/tree/main/robox_firmware_v0.1/include/device) heeft als verantwoordelijkheid het direct aanspreken van de verschillende hardware componenten. De class [**Actuator**](https://github.com/LukevLuijn/robox/blob/main/robox_firmware_v0.1/include/device/Actuator.h) is de overkoepelende actuator class die de algemene zaken regelt die voor beide onderliggende actuator classen hetzelfde zijn. [**Linear**](https://github.com/LukevLuijn/robox/blob/main/robox_firmware_v0.1/include/device/LinearActuator.h) & [**AxialActuator**](https://github.com/LukevLuijn/robox/blob/main/robox_firmware_v0.1/include/device/AxialActuator.h) zijn de daadwerklijke actuators. De applicatie heeft drie axiale actuators en een lineaire actuator. De axiale actuator regelt beweging in graden en de lineaire actuator regelt beweging in millimeters. Beide deze uitwerkingen maken gebruik van een [**HallSensor**](https://github.com/LukevLuijn/robox/blob/main/robox_firmware_v0.1/include/device/HallSensor.h) instantie voor *homing*. De enumeraties [**HomingState_e**](https://github.com/LukevLuijn/robox/blob/98aca16f7c2ca8de0ee4921713f2d635fee8d508/robox_firmware_v0.1/include/device/LinearActuator.h#L19), [**HomingStateSingle_e**](https://github.com/LukevLuijn/robox/blob/98aca16f7c2ca8de0ee4921713f2d635fee8d508/robox_firmware_v0.1/include/device/AxialActuator.h#L21) & [**HomingStateDouble_e**](https://github.com/LukevLuijn/robox/blob/98aca16f7c2ca8de0ee4921713f2d635fee8d508/robox_firmware_v0.1/include/device/AxialActuator.h#L31) worden gebruikt voor de homing sequence van de actuatoren. 
+De package [**Device**](https://github.com/LukevLuijn/robox/tree/main/robox_firmware_v0.1/include/device) heeft als verantwoordelijkheid het direct aanspreken van de verschillende hardware componenten. De klasse [**Actuator**](https://github.com/LukevLuijn/robox/blob/main/robox_firmware_v0.1/include/device/Actuator.h) is de overkoepelende actuator klasse die de algemene zaken regelt die voor beide onderliggende actuator classen hetzelfde zijn. [**Linear**](https://github.com/LukevLuijn/robox/blob/main/robox_firmware_v0.1/include/device/LinearActuator.h) & [**AxialActuator**](https://github.com/LukevLuijn/robox/blob/main/robox_firmware_v0.1/include/device/AxialActuator.h) zijn de daadwerkelijke actuators. De applicatie heeft drie axiale actuators en een lineaire actuator. De axiale actuator regelt beweging in graden en de lineaire actuator regelt beweging in millimeters. Beide deze uitwerkingen maken gebruik van een [**HallSensor**](https://github.com/LukevLuijn/robox/blob/main/robox_firmware_v0.1/include/device/HallSensor.h) instantie voor *homing*. De enumeraties [**HomingState_e**](https://github.com/LukevLuijn/robox/blob/98aca16f7c2ca8de0ee4921713f2d635fee8d508/robox_firmware_v0.1/include/device/LinearActuator.h#L19), [**HomingStateSingle_e**](https://github.com/LukevLuijn/robox/blob/98aca16f7c2ca8de0ee4921713f2d635fee8d508/robox_firmware_v0.1/include/device/AxialActuator.h#L21) & [**HomingStateDouble_e**](https://github.com/LukevLuijn/robox/blob/98aca16f7c2ca8de0ee4921713f2d635fee8d508/robox_firmware_v0.1/include/device/AxialActuator.h#L31) worden gebruikt voor de homing sequence van de actuatoren. 
 
 ### 4.3.1. Ontwerp keuzes <a name="chapter12"></a>
 
 |||
 |:---|:---|
-|**Probleem**|Hoe kun je een homing sequence uitvoeren voor vier verschillende motoren zonder dat deze sequence het resterende programma *blokeerd*?|
+|**Probleem**|Hoe kun je een homing sequence uitvoeren voor vier verschillende motoren zonder dat deze sequence het resterende programma *blokkeert*?|
 |**Besluit**|Het gebruik van verschillende enumeraties die de verschillende stadia van de sequence weergegeven zodat het voor de applicatie duidelijk is welke actie ondernomen moet worden.|
-|**Alternatieve**|Een homing sequence gebruiken die wel blokeerd.|
-|**Argumenten**|Gezien de lineaire actuator vrij traag is en de axiale actuatoren ook niet bijster snel ontstond er een homing sequence van ongeveer twee minuten, in blokerende toestand. Het was dus noodzakelijk om een niet-blokerende homing sequence op te zetten zodat in ieder geval alle actuator tegelijkertijd de sequence konden uitvoeren.|
+|**Alternatieve**|Een homing sequence gebruiken die wel blokkeert.|
+|**Argumenten**|Gezien de lineaire actuator vrij traag is en de axiale actuatoren ook niet bijster snel ontstond er een homing sequence van ongeveer twee minuten, in blokkerende toestand. Het was dus noodzakelijk om een niet-blokkerende homing sequence op te zetten zodat in ieder geval alle actuator tegelijkertijd de sequence konden uitvoeren.|
 
 **Tabel 5** - *Device - ontwerp keuze 1*
 
@@ -218,33 +216,33 @@ De package [**Device**](https://github.com/LukevLuijn/robox/tree/main/robox_firm
 |          **Diagram 5** - *Class diagram - Utils*           |
 
 
-De [**Utils**](https://github.com/LukevLuijn/robox/tree/main/robox_firmware_v0.1/include/utils) package is een verzameling van verschillende class die ieder een eigen functionaliteit bevatten. De class Time bestaat uit een enkele methode *MicroTimer*. De class [**CircularBuffer**](https://github.com/LukevLuijn/robox/blob/main/robox_firmware_v0.1/include/utils/CircularBuffer.h) is een C++ implementatie van de [circulaire buffer](https://en.wikipedia.org/wiki/Circular_buffer) (Wikipedia contributors, 2022a) bedoelt voor het efficient opslaan en uitlezen van sensor waarde. 
+De [**Utils**](https://github.com/LukevLuijn/robox/tree/main/robox_firmware_v0.1/include/utils) package is een verzameling van verschillende klasse die ieder een eigen functionaliteit bevatten. De klasse Time bestaat uit een enkele methode *MicroTimer*. De klasse [**CircularBuffer**](https://github.com/LukevLuijn/robox/blob/main/robox_firmware_v0.1/include/utils/CircularBuffer.h) is een C++ implementatie van de [circulaire buffer](https://en.wikipedia.org/wiki/Circular_buffer) (Wikipedia contributors, 2022a) bedoelt voor het efficiënt opslaan en uitlezen van sensor waarde. 
 
-De [**Logger**](https://github.com/LukevLuijn/robox/blob/main/robox_firmware_v0.1/include/utils/Logger.h) class heeft iets meer substantie dan de andere twee. De logger wordt door vrijwel de gehele applicatie gebruikt. De logger geeft de mogelijkheid om berichten naar de console te schrijven in een voorbepaald format. De Logger is de enige class die naar de seriele bus mag schrijven en is daarom, net zoals de reader, een singleton. Dit maakt het en makkelijk om vanaf meerdere locaties in de applicatie gebruik te maken van de logger en zorgt ervoor dat er nooit van meerdere locaties naar de serieele bus geschreven wordt. De logger houdt ook de *severity* van een bericht bij. Er zijn vier verschillende severities; ERROR, WARNING, INFO en DEBUG. Ieder van deze niveau's kan worden uit- en ingeschakeld. Naast de severity wordt ook de locatie van aanroepen meegenomen in het bericht. De methode, bestandsnaam en lijnnummer moet worden bijgehouden. Omdat het meeegeven van al deze data nogal veel typ-werk is is er bij de logger ook gebruik gemaakt van verschillende *Macro's*, deze macro's zijn [hier](https://github.com/LukevLuijn/robox/blob/98aca16f7c2ca8de0ee4921713f2d635fee8d508/robox_firmware_v0.1/include/utils/Logger.h#L12-L31) terug te vinden. Door gebruik te maken van deze macro's is het opstellen van een log-bericht een stuk simpeler.
+De [**Logger**](https://github.com/LukevLuijn/robox/blob/main/robox_firmware_v0.1/include/utils/Logger.h) klasse heeft iets meer substantie dan de andere twee. De logger wordt door vrijwel de gehele applicatie gebruikt. De logger geeft de mogelijkheid om berichten naar de console te schrijven in een voorbepaald format. De Logger is de enige klasse die naar de seriële bus mag schrijven en is daarom, net zoals de reader, een singleton. Dit maakt het en makkelijk om vanaf meerdere locaties in de applicatie gebruik te maken van de logger en zorgt ervoor dat er nooit van meerdere locaties naar de seriële bus geschreven wordt. De logger houdt ook de *severity* van een bericht bij. Er zijn vier verschillende severities; ERROR, WARNING, INFO en DEBUG. Ieder van deze niveaus kan worden uit- en ingeschakeld. Naast de severity wordt ook de locatie van aanroepen meegenomen in het bericht. De methode, bestandsnaam en lijnnummer moet worden bijgehouden. Omdat het meegegeven van al deze data nogal veel typ-werk is is er bij de logger ook gebruik gemaakt van verschillende *Macro's*, deze macro's zijn [hier](https://github.com/LukevLuijn/robox/blob/98aca16f7c2ca8de0ee4921713f2d635fee8d508/robox_firmware_v0.1/include/utils/Logger.h#L12-L31) terug te vinden. Door gebruik te maken van deze macro's is het opstellen van een log-bericht een stuk simpeler.
 
 |||
 |:---|:---|
 |Zonder macro|```Utils::Logger::GetInstance().Error("message", __func__,__FILE__,__LINE__, "vars");```|
 |Met macro|```ERROR("message", "vars");```|
 
-Door log berichten te voorzien van deze verschillende data elementen is het tijdens het afspelen van de applicatie vele malen makkelijker om bij te houden wat er precies gebeurt in de applicatie.
+Door log berichten te voorzien van deze verschillende data-elementen is het tijdens het afspelen van de applicatie vele malen makkelijker om bij te houden wat er precies gebeurt in de applicatie.
 
 ### 4.4.1. Ontwerp keuzes <a name="chapter14"></a>
 
 |||
 |:---|:---|
-|**Probleem**|Hoe kan op een efficiente manier data opgeslagen en uitgelezen worden, verkregen van sensoren?|
+|**Probleem**|Hoe kan op een efficiënte manier data opgeslagen en uitgelezen worden, verkregen van sensoren?|
 |**Besluit**|Het opstellen van een circulaire buffer.|
 |**Alternatieve**|Grote arrays, of dynamische opties zoals vectoren.|
-|**Argumenten**|Een circulaire buffer is erg efficient qua opslag en geheugen. Het levert altijd een relatief betrouwbaar gemiddelde van de huidige data en is makkelijk in gebruik.|
+|**Argumenten**|Een circulaire buffer is erg efficiënt qua opslag en geheugen. Het levert altijd een relatief betrouwbaar gemiddelde van de huidige data en is makkelijk in gebruik.|
 
 **Tabel 6** - *Utils - ontwerp keuze 1*
 
 |||
 |:---|:---|
-|**Probleem**|Hoe verzeker je dat er maar een instante tegelijkertijd naar de serieele bus schrijft.|
+|**Probleem**|Hoe verzeker je dat er maar een instantie tegelijkertijd naar de seriële bus schrijft.|
 |**Besluit**|Er is wederom gekozen voor het gebruik van het singleton pattern.|
-|**Alternatieve**|Zeer precies bijhouden wanneer er geschreven wordt naar de serieele bus.|
+|**Alternatieve**|Zeer precies bijhouden wanneer er geschreven wordt naar de seriële bus.|
 |**Argumenten**|Zoals eerder vermeld, een singleton heeft maar een enkele instantie. Het is daarom een ideale keuze voor een probleem als deze.|
 
 **Tabel 7** - *Utils - ontwerp keuze 2*
@@ -260,12 +258,13 @@ Door log berichten te voorzien van deze verschillende data elementen is het tijd
 
 |||
 |:---|:---|
-|**Probleem**|Hoe kun je op efficiente manier log berichten opstellen met toch de adequate data onderdelen.|
+|**Probleem**|Hoe kun je op efficiënte manier log berichten opstellen met toch de adequate data onderdelen.|
 |**Besluit**|Het opstellen van verschillende macro's die al deze datavelden automatisch aanroepen.|
 |**Alternatieve**|Het handmatig meegegeven van deze velden.|
 |**Argumenten**|Zoals verteld zijn de velden ingebouwde C++ macro's en zijn daarom ideaal om gebruikt te worden voor een situatie als deze.|
 
 **Tabel 9** - *Utils - ontwerp keuze 4*
+
 
 ## 4.5. Package - Base <a name="chapter15"></a>
 
@@ -274,17 +273,17 @@ Door log berichten te voorzien van deze verschillende data elementen is het tijd
 | <img width="10000" src="assets/CD_base.svg"  alt="cd_base"/> |
 |          **Diagram 6** - *Class diagram - Base*           |
 
-De [**Base**](https://github.com/LukevLuijn/robox/tree/main/robox_firmware_v0.1/include/base) pacakge is het centrale punt van de applicatie. In deze package is de samenhang tussen de package communication, Statemachine en device geregeld. De base package is opgedeeld in twee hoofd onderdelen. 
+De [**Base**](https://github.com/LukevLuijn/robox/tree/main/robox_firmware_v0.1/include/base) package is het centrale punt van de applicatie. In deze package is de samenhang tussen de package communication, StateMachine en device geregeld. De base package is opgedeeld in twee hoofd onderdelen. 
 
-Aan de ene kan is de [**Robot**](https://github.com/LukevLuijn/robox/blob/main/robox_firmware_v0.1/include/base/Robot.h) class. Deze class is verantwoordelijk voor alles hardware. In deze class worden de verschillende actuatoren aangestuurd en gevalideerd. De Robot class is gemaakt volgens het singleton pattern, net zoals bij de serieele bus mag er altijd maar precies een instantie gebruik maken van de hardware. Verder wordt in de Robot class nog [inverse en forward kinematica](https://github.com/LukevLuijn/robox/blob/98aca16f7c2ca8de0ee4921713f2d635fee8d508/robox_firmware_v0.1/src/Robot.cpp#L368-L435) toegepast voor het vertalen van hoeken naar positie en van positie naar hoeken. 
+Aan de ene kan is de [**Robot**](https://github.com/LukevLuijn/robox/blob/main/robox_firmware_v0.1/include/base/Robot.h) klasse. Deze klasse is verantwoordelijk voor alles hardware. In deze klasse worden de verschillende actuatoren aangestuurd en gevalideerd. De Robot klasse is gemaakt volgens het singleton pattern, net zoals bij de seriële bus mag er altijd, maar precies, een instantie gebruik maken van de hardware. Verder wordt in de Robot klasse nog [inverse en forward kinematica](https://github.com/LukevLuijn/robox/blob/98aca16f7c2ca8de0ee4921713f2d635fee8d508/robox_firmware_v0.1/src/Robot.cpp#L368-L435) toegepast voor het vertalen van hoeken naar positie en van positie naar hoeken. 
 
-Aan de andere kant de state machine implementatie. De class [**Machine**](https://github.com/LukevLuijn/robox/blob/main/robox_firmware_v0.1/include/base/Machine.h) is een afgeleide van de class Context en draagd dezelfde verantwoordelijkheid. De class [**MachineState**](https://github.com/LukevLuijn/robox/blob/98aca16f7c2ca8de0ee4921713f2d635fee8d508/robox_firmware_v0.1/include/base/States.h#L16) is een directe afgeleide van de State class, alle onderliggende state-classes staan hieronder beschreven;
+Aan de andere kant de state machine implementatie. De klasse [**Machine**](https://github.com/LukevLuijn/robox/blob/main/robox_firmware_v0.1/include/base/Machine.h) is een afgeleide van de klasse Context en draagt dezelfde verantwoordelijkheid. De klasse [**MachineState**](https://github.com/LukevLuijn/robox/blob/98aca16f7c2ca8de0ee4921713f2d635fee8d508/robox_firmware_v0.1/include/base/States.h#L16) is een directe afgeleide van de State klasse, alle onderliggende state-klasse staan hieronder beschreven;
 
 |Class|Beschrijving|
 |:---|:---|
 |[**StartState**](https://github.com/LukevLuijn/robox/blob/98aca16f7c2ca8de0ee4921713f2d635fee8d508/robox_firmware_v0.1/src/States.cpp#L16-L44)|Start state is de staat waar de applicatie wacht op input van de gebruiker. In deze state zijn alle motoren uitgeschakeld.|
-|[**HomeState**](https://github.com/LukevLuijn/robox/blob/98aca16f7c2ca8de0ee4921713f2d635fee8d508/robox_firmware_v0.1/src/States.cpp#L45-L106)|In deze state voert de applicatie de homing sequence uit voor de vier verschillende actuatoren. Tijdens deze state is het mogelijk om een e-stop uit te voeren. Zodra de homing sequence voltooid is zal de flag: 'activityComplete' op true gezet worden.|
-|[**MoveState**](https://github.com/LukevLuijn/robox/blob/98aca16f7c2ca8de0ee4921713f2d635fee8d508/robox_firmware_v0.1/src/States.cpp#L107-L216)|In de move state worden de motors direct aangesproken en zal de robot gaan bewegen. Zodra de beweging voltooid is zal de flag 'activityComplete' op true gezet worden. Ook tijdens deze state kan er een e-stop uitgevoerd worden.|
+|[**HomeState**](https://github.com/LukevLuijn/robox/blob/98aca16f7c2ca8de0ee4921713f2d635fee8d508/robox_firmware_v0.1/src/States.cpp#L45-L106)|In deze state voert de applicatie de homing sequence uit voor de vier verschillende actuatoren. Tijdens deze state is het mogelijk om een E-Stop uit te voeren. Zodra de homing sequence voltooid is zal de flag: 'activityComplete' op true gezet worden.|
+|[**MoveState**](https://github.com/LukevLuijn/robox/blob/98aca16f7c2ca8de0ee4921713f2d635fee8d508/robox_firmware_v0.1/src/States.cpp#L107-L216)|In de move state worden de motors direct aangesproken en zal de robot gaan bewegen. Zodra de beweging voltooid is zal de flag 'activityComplete' op true gezet worden. Ook tijdens deze state kan er een E-Stop uitgevoerd worden.|
 |[**StopState**](https://github.com/LukevLuijn/robox/blob/98aca16f7c2ca8de0ee4921713f2d635fee8d508/robox_firmware_v0.1/src/States.cpp#L217-L320)|In de stop state wordt het stoppen en pauzeren van de robot geregeld. Bij het pauzeren van de robot wordt er een timer aangezet, zodra de timer afloopt zal de activityComplete flag op true gezet worden. Bij het stoppen van de robot wordt de robot naar de *idle positions* bewogen. Zodra de robot aangekomen is op deze posities worden de motoren uitgeschakeld en de activityComplete flag op true gezet.|
 
 **Tabel 10** - State beschrijvingen
@@ -301,7 +300,7 @@ In het onderstaande state machine diagram is het verloop van de statemachine nog
 
 |||
 |:---|:---|
-|**Probleem**|Hoe verzeker je dat er maar een instantie tegelijkertijd met de hardware componenten communiceerd?|
+|**Probleem**|Hoe verzeker je dat er maar een instantie tegelijkertijd met de hardware componenten communiceert?|
 |**Besluit**|Het opstellen van een singleton class.|
 |**Alternatieve**|Het zeer accuraat bijhouden wie er met de componenten praat.|
 |**Argumenten**|Zoals meerdere malen verteld is een singleton uitermate geschikt als een restrictie voor het vanaf verschillende locaties praten met onderdelen.|

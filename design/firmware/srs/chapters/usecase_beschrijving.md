@@ -1,26 +1,26 @@
 
-In het onderstaande diagram zijn de verschillende use cases te vinden omtrent de firmware. In dit diagram is (schematische) samenhang weergegeven van de verschillende onderdelen van het systeem en hoe de gebruiker (de driver) gebruik kan maken van het systeem.
+In het onderstaande diagram zijn de verschillende usecases te vinden omtrent de firmware. In dit diagram is (schematische) samenhang weergegeven van de verschillende onderdelen van het systeem en hoe de gebruiker (de driver) gebruik kan maken van het systeem.
 
 ||
 |:---:|
 |<img width="10000" src="assets/UC_firmware.svg"  alt="use case diagram firmware"/>|
-|**!diagram** - *Use case diagram Firmware*|
+|**!diagram** - *Usecase diagram Firmware*|
 
-In het diagram is te zien dat de verschillende use cases opgedeeld zijn in vier verschillende segmenten.
+In het diagram is te zien dat de verschillende usecases opgedeeld zijn in vier verschillende segmenten.
 
-Het eerste segment 'Aansturen van de robot' is verantwoordelijk voor alle use cases die betrekking hebben tot het bewegen van de robot. Denk hierbij aan het bewegen naar een bepaalde positie of het pauzeren van de robot.
+Het eerste segment 'Aansturen van de robot' is verantwoordelijk voor alle usecases die betrekking hebben tot het bewegen van de robot. Denk hierbij aan het bewegen naar een bepaalde positie of het pauzeren van de robot.
 
 Het tweede segment, 'Instellen van de configuratie', regelt het instellen van de robot. Bijvoorbeeld het instellen van de snelheid en acceleratie.
 
 Het derde segment 'Reageren op requests' is verantwoordelijk voor het opsturen van de data naar de driver. Het opsturen van de huidige positie is een voorbeeld hiervan.
 
-Tot slot het vierde onderdeel; 'Uitvoeren Estop'. Het uitvoeren van een noodstop zal een andere uitvoering krijgen dan de onderdelen vewerkt in 'Aansturen van de robot', en heeft hierdoor ook een appart segment.
+Tot slot het vierde onderdeel; 'Uitvoeren Estop'. Het uitvoeren van een noodstop zal een andere uitvoering krijgen dan de onderdelen verwerkt in 'Aansturen van de robot', en heeft hierdoor ook een apart segment.
 
 <div style="page-break-after: always;"></div>
 
 ## UC0 - Aansturen van de robot
 
-In dit onderdeel zullen de verschillende use cases uit het onderdeel 'Aansturen van de robot' dieper toegelicht worden.
+In dit onderdeel zullen de verschillende usecases uit het onderdeel 'Aansturen van de robot' dieper toegelicht worden.
 
 ### UC0_0 - Aansturen door middel van hoeken
 
@@ -42,14 +42,14 @@ In dit onderdeel zullen de verschillende use cases uit het onderdeel 'Aansturen 
 |||4a.|Het systeem zal een log bericht versturen waarin vermeld wordt dat de positie niet uitgevoerd kan worden.|
 ||**Alternative flow 02:**|||
 ||||*De robot is niet klaar om een nieuwe beweging uit te voeren.*|
-|||5a.|Het bericht wordt toegevoegd een een queue en op een later moment uitgevoerd worden.|
+|||5a.|Het bericht wordt toegevoegd een queue en op een later moment uitgevoerd worden.|
 |||||
 
 **!usecase** - *Fully dressed usecase description - UC00*
 
 <div style="page-break-after: always;"></div>
 
-### UC0_1 - Aansturen door middel van coordinaten
+### UC0_1 - Aansturen door middel van coördinaten
 
 |||
 |:---|:---|
@@ -61,7 +61,7 @@ In dit onderdeel zullen de verschillende use cases uit het onderdeel 'Aansturen 
 ||Actor action||System resposibility|
 |:---:|:---|:---:|:---|
 |1.|Geeft een nieuwe positie op.|2.|Verwerkt het ontvangen bericht.|
-|||3.|Berekent de hoeken op basis van de ontvangen coordinaten.|
+|||3.|Berekent de hoeken op basis van de ontvangen coördinaten.|
 |||4.|Kijkt of de posities binnen de uiterste waardes vallen.|
 |||5.|Kijkt of de robot klaar is om een beweging te maken.|
 |||6.|Beweegt de verschillende assen naar de berekende hoeken.|
@@ -70,7 +70,7 @@ In dit onderdeel zullen de verschillende use cases uit het onderdeel 'Aansturen 
 |||5a.|Het systeem zal een log bericht versturen waarin vermeld wordt dat de positie niet uitgevoerd kan worden.|
 ||**Alternative flow 02:**|||
 ||||*De robot is niet klaar om een nieuwe beweging uit te voeren.*|
-|||6a.|Het bericht wordt toegevoegd een een queue en op een later moment uitgevoerd worden.|
+|||6a.|Het bericht wordt toegevoegd een queue en op een later moment uitgevoerd worden.|
 |||||
 
 **!usecase** - *Fully dressed usecase description - UC01*
@@ -84,15 +84,15 @@ In dit onderdeel zullen de verschillende use cases uit het onderdeel 'Aansturen 
 |:---|:---|
 |Primary actor:|Driver|
 |Brief description:|Het systeem reageert op een inkomend bericht omtrent het starten van de robot, vervolgens zal het systeem de stappen ondernemen om de robot te starten.|
-|Preconditions:|Er is een serieele verbinding met de driver en de robot bevind zich in een onbekende positie, of net opgestart, of gestopt.|
+|Preconditions:|Er is een seriële verbinding met de driver en de robot bevind zich in een onbekende positie, of net opgestart, of gestopt.|
 |Postconditions:|De robot bevind zich in een bekende positie.|
 
 ||Actor action||System resposibility|
 |:---:|:---|:---:|:---|
 |1.|Stuurt een start commando.|2.|Verwerkt het ontvangen bericht.|
 |||3.|Voert de homing sequence uit voor de verschillende actuatoren in de robot.|
-|||4.|Update alle data, omtrent positioneering van de robot, naar de nieuwe waardes.|
-|||5.|Suurt een bericht naar de driver omtrent het voltooien van de homing sequence.|
+|||4.|Update alle data, omtrent positionering van de robot, naar de nieuwe waardes.|
+|||5.|Stuurt een bericht naar de driver omtrent het voltooien van de homing sequence.|
 
 **!usecase** - *Fully dressed usecase description - UC02*
 
@@ -111,12 +111,12 @@ In dit onderdeel zullen de verschillende use cases uit het onderdeel 'Aansturen 
 |:---:|:---|:---:|:---|
 |1.|Stuurt een stop commando.|2.|Verwerkt het ontvangen bericht.|
 |||3.|Kijkt of de robot klaar is om een beweging te maken.|
-|||4.|Beweeft de assen naar de verschillende 'idle'-posities.|
-|||5.|Deactiveerd de verschillende motoren in de robot.|
-|||6.|Verwijderd alle ge-queuede bewegings commando's uit het systeem.|
+|||4.|Beweegt de assen naar de verschillende 'idle'-posities.|
+|||5.|Deactiveert de verschillende motoren in de robot.|
+|||6.|Verwijderd alle ge-queuede bewegingscommando's uit het systeem.|
 ||**Alternative flow 01:**|||
 ||||*De robot is niet klaar om een nieuwe beweging uit te voeren.*|
-|||4a.|Het bericht wordt toegevoegd een een queue en op een later moment uitgevoerd worden.|
+|||4a.|Het bericht wordt toegevoegd een queue en op een later moment uitgevoerd worden.|
 ||||Zodra het bericht uitgevoerd wordt zal er gestart worden bij stap 4.|
 
 **!usecase** - *Fully dressed usecase description - UC03*
@@ -129,7 +129,7 @@ In dit onderdeel zullen de verschillende use cases uit het onderdeel 'Aansturen 
 |||
 |:---|:---|
 |Primary actor:|Driver|
-|Brief description:|Het systeem reageert op een inkomend beircht omtrent het aansturen van de gripper.|
+|Brief description:|Het systeem reageert op een inkomend bericht omtrent het aansturen van de gripper.|
 |Preconditions:|De robot heeft een 'start'-bericht ontvangen en verwerkt (bevind zich in een bekende positie).|
 |Postconditions:|De gripper is aangestuurd met de gevraagde PWM waarde.|
 
@@ -139,7 +139,7 @@ In dit onderdeel zullen de verschillende use cases uit het onderdeel 'Aansturen 
 |1.|Stuurt een nieuwe gripper waarde.|2.|Verwerkt het ontvangen bericht.|
 |||3.|Kijkt of de waarde binnen de uiterste vallen.|
 |||4.|Kijkt of de robot klaar is om een beweging te maken.|
-|||5.|Activeerdt de gripper met de opgegeven PWM waarde.|
+|||5.|Activeert de gripper met de opgegeven PWM waarde.|
 ||**Alternative flow 01:**|||
 ||||*De waarde valt niet binnen de uiterste.*|
 |||4a.|Er zal een bericht naar de driver gestuurd worden waarin vermeld wordt dat de opgegeven waardes niet uitgevoerd kunnen worden.|
@@ -156,7 +156,7 @@ In dit onderdeel zullen de verschillende use cases uit het onderdeel 'Aansturen 
 |||
 |:---|:---|
 |Primary actor:|Driver|
-|Brief description:|Het systeem reageert op een inkoment bericht omtrent het pauzeren van de robot. Het systeem zal de robot pauzeren voor de aangegeven tijd.|
+|Brief description:|Het systeem reageert op een inkomend bericht omtrent het pauzeren van de robot. Het systeem zal de robot pauzeren voor de aangegeven tijd.|
 |Preconditions:|De robot heeft een 'start'-bericht ontvangen en verwerkt (bevind zich in een bekende positie).|
 |Postconditions:|De robot heeft gepauzeerd voor de aangegeven tijd.|
 
@@ -180,7 +180,7 @@ De usecases die vallen onder dit onderdeel zijn allemaal soortgelijk in uitvoeri
 |:---|:---|
 |Primary actor:|Driver|
 |Brief description:|Het systeem verwerkt een configuratie bericht.|
-|Preconditions:|Er is een serieele verbinding met de driver.|
+|Preconditions:|Er is een seriële verbinding met de driver.|
 |Postconditions:|De configuratie is verwerkt in het systeem.|
 
 ||Actor action||System resposibility|
@@ -197,8 +197,8 @@ De usecases die vallen onder dit onderdeel zijn allemaal soortgelijk in uitvoeri
 |||
 |:---|:---|
 |Primary actor:|Driver|
-|Brief description:|Het systeem reageert op een inkomend data request bericht. Het systeem zal een reponse opzetten en terug sturen naar de driver.|
-|Preconditions:|Er is een serieele verbinding met de driver.|
+|Brief description:|Het systeem reageert op een inkomend data-request bericht. Het systeem zal een response opzetten en terug sturen naar de driver.|
+|Preconditions:|Er is een seriële verbinding met de driver.|
 |Postconditions:|Een response met de corresponderende data is verstuurd naar de driver.|
 
 ||Actor action||System resposibility|
@@ -214,15 +214,15 @@ De usecases die vallen onder dit onderdeel zijn allemaal soortgelijk in uitvoeri
 |||
 |:---|:---|
 |Primary actor:|Driver|
-|Brief description:|Het systeem ontvant een noodstop bericht en zal vervolgens direct alle beweging van de robot staken.|
-|Preconditions:|Er is een serieele verbinding met de driver.|
+|Brief description:|Het systeem ontvangt een noodstop bericht en zal vervolgens direct alle beweging van de robot staken.|
+|Preconditions:|Er is een seriële verbinding met de driver.|
 |Postconditions:|De robot is direct gestopt en alle motoren zijn uitgeschakeld.|
 
 ||Actor action||System resposibility|
 |:---:|:---|:---:|:---|
 |1.|Stuurt een 'noodstop'-bericht.|2.|Identificeert het bericht als 'noodstop'.|
-|||3.|Schakeld direct alle motoren uit.|
-|||4.|Verwijderd alle opgeslagen bewegingsberichten uit de queue.|
+|||3.|Schakelt direct alle motoren uit.|
+|||4.|Verwijderd alle opgeslagen bewegings-berichten uit de queue.|
 
 **!usecase** - *Fully dressed usecase description - UC*
 

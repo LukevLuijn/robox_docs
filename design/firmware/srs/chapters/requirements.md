@@ -23,11 +23,11 @@ In dit hoofdstuk zullen de verschillende (niet-) functionele requirements beschr
 |**FR-01**|<p class=must>Must</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de maximale positie per motor.|:heavy_check_mark:|
 |**FR-02**|<p class=must>Must</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de minimale positie per motor.|:heavy_check_mark:|
 |**FR-03**|<p class=must>Must</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de huidige snelheid per motor.|:heavy_check_mark:|
-|**FR-04**|<p class=must>Must</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de huidgie acceleratie per motor.|:heavy_check_mark:|
+|**FR-04**|<p class=must>Must</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de huidige acceleratie per motor.|:heavy_check_mark:|
 |**FR-05**|<p class=must>Must</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de huidige positie per motor.|:heavy_check_mark:|
 |**FR-06**|<p class=must>Must</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de huidige gripper PWM waarde.|:heavy_check_mark:|
 |**FR-07**|<p class=must>Must</p>|Het systeem moet de mogelijkheid bieden tot het bewegen van de robot aan de hand van verschillende hoeken.|:heavy_check_mark:|
-|**FR-08**|<p class=must>Must</p>|Het systeem oet de mogelijkheid bieden tot het bewegen van de robot aan de hand van een cartesiaanse positie (x,y,z).|:heavy_check_mark:|
+|**FR-08**|<p class=must>Must</p>|Het systeem moet de mogelijkheid bieden tot het bewegen van de robot aan de hand van een cartesiaanse positie (x,y,z).|:heavy_check_mark:|
 |**FR-09**|<p class=must>Must</p>|Het systeem moet de mogelijkheid bieden tot het instellen van de huidige gripper PWM waarde.|:heavy_check_mark:|
 |**FR-10**|<p class=must>Must</p>|Het systeem moet de mogelijkheid bieden tot het stoppen van de robot.|:heavy_check_mark:|
 |**FR-11**|<p class=must>Must</p>|Het systeem moet de mogelijkheid bieden tot het direct stoppen van de robot (noodstop).|:heavy_check_mark:|
@@ -35,7 +35,7 @@ In dit hoofdstuk zullen de verschillende (niet-) functionele requirements beschr
 |**FR-13**|<p class=should>Should</p>|Het systeem moet de mogelijkheid bieden tot het instellen van globale snelheid.|:heavy_check_mark:|
 |**FR-14**|<p class=should>Should</p>|Het systeem moet de mogelijkheid bieden tot het instellen van globale acceleratie.|:heavy_check_mark:|
 |**FR-15**|<p class=should>Should</p>|Het systeem moet de mogelijkheid bieden tot het instellen van de snelheid per motor.|:heavy_check_mark:|
-|**FR-16**|<p class=should>Should</p>|Het systeem moet de mogelijkheid bieden tot het instellen van de accleratie per motor.|:heavy_check_mark:|
+|**FR-16**|<p class=should>Should</p>|Het systeem moet de mogelijkheid bieden tot het instellen van de acceleratie per motor.|:heavy_check_mark:|
 |**FR-17**|<p class=should>Should</p>|Het systeem moet de mogelijkheid bieden tot het (de)activeren van de *error* berichten.|:heavy_check_mark:|
 |**FR-18**|<p class=should>Should</p>|Het systeem moet de mogelijkheid bieden tot het (de)activeren van de *warning* berichten.|:heavy_check_mark:|
 |**FR-19**|<p class=should>Should</p>|Het systeem moet de mogelijkheid bieden tot het (de)activeren van de *info* berichten.|:heavy_check_mark:|
@@ -46,9 +46,9 @@ In dit hoofdstuk zullen de verschillende (niet-) functionele requirements beschr
 |**FR-24**|<p class=should>Should</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de huidige **frame height offset*.|:heavy_check_mark:|
 |**FR-25**|<p class=should>Should</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de huidige **gripper height offset*.|:heavy_check_mark:|
 |**FR-26**|<p class=should>Should</p>|Het systeem moet de mogelijkheid bieden tot het opvragen of een motor momenteel actief is (aan het bewegen).|:heavy_check_mark:|
-|**FR-27**|<p class=should>Should</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de huidige positie van de gripper in het cartesiaans coordinaten systeem (x,y,z).|:heavy_check_mark:|
+|**FR-27**|<p class=should>Should</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de huidige positie van de gripper in het cartesiaans coördinaten systeem (x,y,z).|:heavy_check_mark:|
 |**FR-28**|<p class=should>Should</p>|Het systeem moet de mogelijkheid bieden tot het pauzeren van de robot voor een bepaald aantal milliseconden.|:heavy_check_mark:|
-|**FR-29**|<p class=should>Should</p>|Het systeem moet de gebruiker laten weten waneer een aangevraagde positie niet bereikbaar is. Bijvoorbeeld door een log bericht.|:heavy_check_mark:|
+|**FR-29**|<p class=should>Should</p>|Het systeem moet de gebruiker laten weten wanneer een aangevraagde positie niet bereikbaar is. Bijvoorbeeld door een log bericht.|:heavy_check_mark:|
 |**FR-30**|<p class=should>Should</p>|Het systeem moet de gebruiker laten weten wanneer een aangevraagde gripper waarde niet mogelijk is, bijvoorbeeld door een log bericht.|:heavy_check_mark:|
 |**FR-31**|<p class=should>Should</p>|Het systeem moet de gebruiker laten weten wanneer een aangevraagde snelheid niet mogelijk is, bijvoorbeeld door een log bericht.|:heavy_check_mark:|
 |**FR-32**|<p class=should>Should</p>|Het systeem moet de gebruiker laten weten wanneer een aangevraagde acceleratie niet mogelijk is, bijvoorbeeld door een log bericht.|:heavy_check_mark:|
@@ -56,7 +56,7 @@ In dit hoofdstuk zullen de verschillende (niet-) functionele requirements beschr
 |**FR-34**|<p class=could>Could</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de verschillende pin configuraties.|:heavy_check_mark:|
 |**FR-35**|<p class=could>Could</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de microstepping resolutie per motor.|:heavy_check_mark:|
 |**FR-36**|<p class=could>Could</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de **steps per degree* waarde per radiale actuator.|:heavy_check_mark:|
-|**FR-37**|<p class=could>Could</p>|Het systeem moet de mogelijkheid bieden tot het opvrgane van de **steps per millimeter* waarde per lineare actuator. |:heavy_check_mark:|
+|**FR-37**|<p class=could>Could</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de **steps per millimeter* waarde per lineaire actuator. |:heavy_check_mark:|
 |**FR-38**|<p class=could>Could</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de status van *error* berichten.|:heavy_check_mark:|
 |**FR-39**|<p class=could>Could</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de status van *warning* berichten.|:heavy_check_mark:|
 |**FR-40**|<p class=could>Could</p>|Het systeem moet de mogelijkheid bieden tot het opvragen van de status van *info* berichten.|:heavy_check_mark:|
@@ -80,7 +80,7 @@ In dit hoofdstuk zullen de verschillende (niet-) functionele requirements beschr
 
 ## Niet functionele requirements
 
-In dit onderdeel worden de niet functionele requirements verder toegelicht. De niet functionele requirements zijn onderverdeeld op basis van quality of service (QoS). De verschillende QoS elementen; usability, reliability, performance en supportability, zijn in de onderstaande tabel uitgwerkt.
+In dit onderdeel worden de niet functionele requirements verder toegelicht. De niet functionele requirements zijn onderverdeeld op basis van quality of service (QoS). De verschillende QoS elementen; usability, reliability, performance en supportability, zijn in de onderstaande tabel uitgewerkt.
 
 ### QoS - Usability
 
@@ -91,7 +91,7 @@ In dit onderdeel worden de niet functionele requirements verder toegelicht. De n
 |**NFR-03**|<p class=must>Must</p>|*Safety*|Het systeem zal logs met de prioriteit: <span class=info>INFO</span> naar de gebruiker sturen, indien de gebruiker dit niet specifiek heeft gedeactiveerd.|:heavy_check_mark:|
 |**NFR-04**|<p class=must>Must</p>|*Safety*|Het systeem zal logs met de prioriteit: <span class=debug>DEBUG</span> naar de gebruiker sturen, indien de gebruiker dit niet specifiek heeft gedeactiveerd.|:heavy_check_mark:|
 |**NFR-05**|<p class=must>Must</p>|*Quality*|Alle publieke methodes in het systeem zullen voorzien worden van beschrijvend [doxygen](https://www.doxygen.nl/manual/docblocks.html) (Doxygen, n.d.) commentaar.|:heavy_check_mark:|
-|**NFR-06**|<p class=must>Must</p>|*Quality*|Commentaar in code zal geschreven worden in de voertaal: engels.|:heavy_check_mark:|
+|**NFR-06**|<p class=must>Must</p>|*Quality*|Commentaar in code zal geschreven worden in de voertaal: Engels.|:heavy_check_mark:|
 |**NFR-07**|<p class=should>Should</p>|*Quality*|De verschillende onderdelen in het systeem zullen worden onderverdeeld in namespaces.|:heavy_check_mark:|
 |**NFR-08**|<p class=should>Should</p>|*Quality*|De verschillende header documenten (*.h) zullen worden gegroepeerd op basis van namespace.|:heavy_check_mark:|
 |**NFR-09**|<p class=could>Could</p>|*Quality*|De applicatie zal voorzien worden van een installatiehandleiding.|:heavy_multiplication_x:|
@@ -106,11 +106,11 @@ In dit onderdeel worden de niet functionele requirements verder toegelicht. De n
 |Index|Prioriteit|Onderdeel|Requirement|Voldaan|
 |:---:|:---:|:---:|:---|:---:|
 |**NFR-13**|<p class=must>Must</p>|*Reliability*|Het systeem zal voorzien zijn van mini- en maximale positionele waardes per motor.|:heavy_check_mark:|
-|**NFR-14**|<p class=must>Must</p>|*Reliability*|Het systeem zal rekening houden met de mini- en maximale positionele waardes door deze niet te overschreiden.|:heavy_check_mark:|
+|**NFR-14**|<p class=must>Must</p>|*Reliability*|Het systeem zal rekening houden met de mini- en maximale positionele waardes door deze niet te overschrijden.|:heavy_check_mark:|
 |**NFR-15**|<p class=must>Must</p>|*Reliability*|Het systeem zal voorzien zijn van mini- en maximale snelheids waardes per motor.|:heavy_check_mark:|
-|**NFR-16**|<p class=must>Must</p>|*Reliability*|Het systeem zal rekening houden met de mini- en maximale snelheids waardes door deze niet te overschreiden. |:heavy_check_mark:|
+|**NFR-16**|<p class=must>Must</p>|*Reliability*|Het systeem zal rekening houden met de mini- en maximale snelheids waardes door deze niet te overschrijden. |:heavy_check_mark:|
 |**NFR-17**|<p class=must>Must</p>|*Reliability*|Het systeem zal voorzien zijn van mini- en maximale acceleratie waardes per motor.|:heavy_check_mark:|
-|**NFR-18**|<p class=must>Must</p>|*Reliability*|Het systeem zal rekening houden mde mini- en maximale accelerate waardes door deze niet te overschreiden.|:heavy_check_mark:|
+|**NFR-18**|<p class=must>Must</p>|*Reliability*|Het systeem zal rekening houden met de mini- en maximale acceleratie waardes door deze niet te overschrijden.|:heavy_check_mark:|
 |**NFR-19**|<p class=must>Must</p>|*Safety*|Het systeem zal binnen 100 milliseconden tot stilstand komen in het geval van een noodstop.|:heavy_check_mark:|
 |**NFR-20**|<p class=could>Could</p>|*Reliability*|Het systeem zal altijd hetzelfde pad volgen vanaf een positie A naar een positie B|:heavy_check_mark:|
 
@@ -122,7 +122,7 @@ In dit onderdeel worden de niet functionele requirements verder toegelicht. De n
 
 |Index|Prioriteit|Onderdeel|Requirement|Voldaan|
 |:---:|:---:|:---:|:---|:---:|
-|**NFR-21**|<p class=must>Must</p>|*Timeliness*|Het systeem zal binnen 100 milliseconden en beweginscommando uitvoeren indien er geen andere beweginscommando's in de wachtrij staan.|:heavy_check_mark:|
+|**NFR-21**|<p class=must>Must</p>|*Timeliness*|Het systeem zal binnen 100 milliseconden en bewegingscommando uitvoeren indien er geen andere bewegingscommando's in de wachtrij staan.|:heavy_check_mark:|
 |**NFR-22**|<p class=must>Must</p>|*Timeliness*|Het systeem zal binnen 20 milliseconden een response hebben verstuurd wanneer er een data request ontvangen is.|:heavy_check_mark:|
 
 **!tabel** - *niet functionele requirements - QoS Performance*

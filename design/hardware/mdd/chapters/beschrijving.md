@@ -10,24 +10,24 @@ In dit onderdeel van het document staat de uitwerking van het model centraal. Zo
 | <img width="310" src="assets/segment00/back_left_view.png"  alt="dimensies"/> |<img width="330" src="assets/segment00/back_right_view.png"  alt="dimensies"/> |<img width="295" src="assets/segment00/front_right_view.png"  alt="dimensies"/> |<img width="300" src="assets/segment00/front_left_view.png"  alt="dimensies"/> |
 |       **!afbeelding** - *S00 - Back left view*       |**!afbeelding** - *S00 - Back right view*       |**!afbeelding** - *S00 - Front right view*       |**!afbeelding** - *S00 - Front left view*       |
 
-Het eerste segment van het model is het frame. Het frame verzorgt de structuur van de arm. Het is essentieel dat het frame stevig genoeg is om het gewicht en de inertia van de arm kan weerstaan. Het skelet van het frame is opgebouwd uit verschillende aluminium profielen (extrusion). De profielen zijn onderling verbonden met verschillende extrusion brackets dit levert een stevig geheel.
+Het eerste segment van het model is het frame. Het frame verzorgt de structuur van de arm. Het is essentieel dat het frame stevig genoeg is om het gewicht en de inertie van de arm kan weerstaan. Het skelet van het frame is opgebouwd uit verschillende aluminium profielen (extrusion). De profielen zijn onderling verbonden met verschillende extrusion brackets dit levert een stevig geheel.
 
-Het frame is onderverdeeld in twee onderdelen. Het onderdeel verantwoordelijk voor de lineaire beweging en het onderdeel dat verantwoordelijk is voor de electronica. De onderverdeling van deze onderdelen is gedaan omdat het frame vrij klein is en sommige plekken in het frame zijn niet makkelijk te bereiken als het geheel met elkaar verbonden is.
+Het frame is onderverdeeld in twee onderdelen. Het onderdeel verantwoordelijk voor de lineaire beweging en het onderdeel dat verantwoordelijk is voor de elektronica. De onderverdeling van deze onderdelen is gedaan omdat het frame vrij klein is en sommige plekken in het frame zijn niet makkelijk te bereiken als het geheel met elkaar verbonden is.
 
 Het onderdeel dat verantwoordelijk is voor de lineaire beweging is opgebouwd uit een deel van het frame, de lineaire geleiders, de leadscrews, motoren en de aandrijving. 
 
-Er is gekozen voor vier lineaire geleiders ieder van twaalf millimeter dik. Deze keuze is gemaakt omdat het arm onderdeel van de robot redelijk zwaar is en de druk van al dit gewicht moet opgevangen worden over een vrij groot oppervlak (500 millimeter), door deze twaalf millimeter dikke geleider assen te gebruiken kun je met zekerheid zeggen dat de geleider assen niet zullen bezwijken onder het gewicht. De leadscrew is een een acht millimeter trapezium-spindel met een *pitch* van acht millimeter. De pitch is gekozen omdat de arm redelijk snel omhoog en omlaag moet kunnen bewegen. Acht millimeter was de hoogst beschikbare leadscrew.
+Er is gekozen voor vier lineaire geleiders ieder van twaalf millimeter dik. Deze keuze is gemaakt omdat het arm onderdeel van de robot redelijk zwaar is en de druk van al dit gewicht moet opgevangen worden over een vrij groot oppervlak (500 millimeter), door deze twaalf millimeter dikke geleider assen te gebruiken kun je met zekerheid zeggen dat de geleider assen niet zullen bezwijken onder het gewicht. De leadscrew is een acht millimeter trapezium-spindel met een *pitch* van acht millimeter. De pitch is gekozen omdat de arm redelijk snel omhoog en omlaag moet kunnen bewegen. Acht millimeter was de hoogst beschikbare leadscrew.
 
 ||||
 |:---:|:---:|:---:|
 |<img width="150" src="assets/segment00/electronics.png"  alt="dimensies"/>|<img width="363" src="assets/segment00/controller_bracket.png"  alt="dimensies"/>|<img width="240" src="assets/segment00/bot_view.png"  alt="dimensies"/>|
-|**!afbeelding** - *Electronica*|**!afbeelding** - *Controller*|**!afbeelding** - *Aandrijving*|
+|**!afbeelding** - *Elektronica*|**!afbeelding** - *Controller*|**!afbeelding** - *Aandrijving*|
 
 De motoren wegen ieder ongeveer 300 gram. Omdat een van de requirements was dat het zwaartepunt van het frame zo laag mogelijk zou moeten liggen om de stabiliteit van de robot te vergroten is er voor gekozen om de motoren op het laagste punt van het frame te monteren. Hierdoor kan ook de aandrijving aan de onderkant van de robot plaatsvinden (afbeelding *'Aandrijving'*).
 
-Door een systeem op te zetten waardoor de gehele electronica los van de rest van het frame in elkaar gezet kan worden heb je alle ruimte om te manoeuvreren (Bijlage 1 - bouwfoto 57 & 59). Op de afbeelding *'Electronica'* is nogmaals een schematische weergaven te zien hoe het electronica deel is opgebouwd.
+Door een systeem op te zetten waardoor de gehele elektronica los van de rest van het frame in elkaar gezet kan worden heb je alle ruimte om te manoeuvreren (Bijlage 1 - bouwfoto 57 & 59). Op de afbeelding *'Elektronica'* is nogmaals een schematische weergaven te zien hoe het elektronica deel is opgebouwd.
 
-Qua stroomvoorziening is er gekozen voor een model dat eigenlijk bedoelt is voor LED strips, het is een langwerpig model dat precies tussen de extrusion palen past aan de achterkant van het frame. De verschillende stepper drivers direct boven de transformator gemonteerd met geprinte brackets. Verder zijn in dit onderdeel nog de buck converter voor de stroomvoorziening van de controller en de controller (afbeelding *'Controller'*) zelf gemonteerd.
+Qua stroomvoorziening is er gekozen voor een model dat eigenlijk bedoelt is voor LED-strips, het is een langwerpig model dat precies tussen de extrusion palen past aan de achterkant van het frame. De verschillende stepper drivers direct boven de transformator gemonteerd met geprinte brackets. Verder zijn in dit onderdeel nog de buck-converter voor de stroomvoorziening van de controller en de controller (afbeelding *'Controller'*) zelf gemonteerd.
 
 De controller is handmatig gesoldeerd op een BAUD - Bone lite *PCB*. Dit is een zelf ontworpen *permaboard*. In de bijlage zijn enkele foto's van het resultaat te zien (Bijlage 1 - Bouwfoto 48,49,50,51,53 & 55). op Bouwfoto 56 is de controller gemonteerd in het frame te zien.
 
@@ -65,6 +65,7 @@ De axiale beweging van dit segment en segment 02 & 03 zijn op dezelfde manier ge
 **!tabel** - *Specificaties segment 01*
 
 
+
 ## Segment 02 - De elleboog
 
 ||||
@@ -100,9 +101,9 @@ De tensioners van dit segment zijn te zien op de derde afbeelding (*'S02 - Inner
 |<img width="10000" src="assets/segment03/top_view.png"  alt="dimensies"/>|<img width="10000" src="assets/segment03/bot_view.png"  alt="dimensies"/>|<img width="10000" src="assets/segment03/inner_view.png"  alt="dimensies"/>|
 |**!afbeelding** - *S03 - Top view*|**!afbeelding** - *S03 - Bot view*|**!afbeelding** - *S03 - Inner view*|
 
-De pols van de robot, segment 03, heeft een stepper motor geplaatst achter het draaipunt van het vorige segment. Dit heeft twee redenen. De eerste reden is omdat bij snelle bewegingen de inertia van de robot erg hoog is. Door het segment meer in evenwicht te brengen, door een zwaar gewicht achter het draaipunt te plaatsen, kan deze inertia enigszins verlaagd worden. De tweede reden is dat er geen passende tandriem gevonden kon worden voor de afstand voor het draaipunt ([timing_belt_calculator](https://github.com/LukevLuijn/timing_belt_calculator/blob/10324f55a1fdbd799eec97158a6e682fbe9118f9/belt_calc/README.md)). De tandriem die uiteindelijk gebruikt is heeft meerdere verlenging-idlers nodig gehad om tot een passend geheel te komen. 
+De pols van de robot, segment 03, heeft een stepper motor geplaatst achter het draaipunt van het vorige segment. Dit heeft twee redenen. De eerste reden is omdat bij snelle bewegingen de inertie van de robot erg hoog is. Door het segment meer in evenwicht te brengen, door een zwaar gewicht achter het draaipunt te plaatsen, kan deze inertie enigszins verlaagd worden. De tweede reden is dat er geen passende tandriem gevonden kon worden voor de afstand voor het draaipunt ([timing_belt_calculator](https://github.com/LukevLuijn/timing_belt_calculator/blob/10324f55a1fdbd799eec97158a6e682fbe9118f9/belt_calc/README.md)). De tandriem die uiteindelijk gebruikt is heeft meerdere verlenging-idlers nodig gehad om tot een passend geheel te komen. 
 
-De pols van de robot gebruikt net zoals de andere segmenten van de arm het zelfde systeem voor de axiale beweging ('Segment 01 - Axiale beweging'), Net zoals het tweede segment, de elleboog, zijn de tensioners van dit segment bereikbaar van buiten het model.
+De pols van de robot gebruikt net zoals de andere segmenten van de arm hetzelfde systeem voor de axiale beweging ('Segment 01 - Axiale beweging'), Net zoals het tweede segment, de elleboog, zijn de tensioners van dit segment bereikbaar van buiten het model.
 
 De pols is zo ingericht dat het complete segment onder het voorgaande segment langs kan. De lengte van dit segment is afgestemd samen het segment 02 zodat hoe dit segment ook georiënteerd is het zal nooit het frame raken.
 

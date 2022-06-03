@@ -9,7 +9,7 @@ Dit document is geschreven voor de projectbegeleiding en andere belangstellende.
 
 ## Beperkingen
 
-Het complete model zal ontworpen en ontwikkeld worden in de applicatie [Autodesk - Fusion 360](https://www.autodesk.eu/products/fusion-360/overview?term=1-YEAR&tab=subscription). Verder zal het project ontwikkeld worden voor een 3D printer met een oppervlak van 210x210x250 millimeter. Alle 3D geprinte onderdelen zullen geprint worden in [PLA plastic](https://en.wikipedia.org/wiki/Polylactic_acid).
+Het complete model zal ontworpen en ontwikkeld worden in de applicatie [Autodesk - Fusion 360](https://www.autodesk.eu/products/fusion-360/overview?term=1-YEAR&tab=subscription). Verder zal het project ontwikkeld worden voor een 3D-printer met een oppervlak van 210x210x250 millimeter. Alle 3D geprinte onderdelen zullen geprint worden in [PLA plastic](https://en.wikipedia.org/wiki/Polylactic_acid).
 
 
 !url Autodesk. (2022, 13 januari). Fusion 360 | Autodesk. Fusion 360. Geraadpleegd op 31 mei 2022, van [https://www.autodesk.eu/products/fusion-360/overview?term=1-YEAR&tab=subscription](https://www.autodesk.eu/products/fusion-360/overview?term=1-YEAR&tab=subscription)

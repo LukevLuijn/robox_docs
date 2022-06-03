@@ -16,13 +16,13 @@ In dit onderdeel zullen enkele essentiële usecases in fully-dressed formaat uit
 |1.|De gebruiker drukt op de 'Connect'-toggleknop.|2.|Het systeem veranderd de tekst van de 'Connect'-knop naar 'Disconnect'.|
 |||3.|Het systeem kijkt of de robot beschikbaar is voor een seriële connectie.|
 |||4.|Het systeem maakt een seriële connectie met de robot.|
-|||5.|Het systeem start de data uitwisseling met de robot.|
+|||5.|Het systeem start de data-uitwisseling met de robot.|
 |||6.|Het systeem activeert de 'Activate'-toggleknop.|
 |7.|De gebruiker drukt op de 'Activate'-toggleknop.|8.|Het systeem stuurt een 'start'-bericht naar de robot.|
 |||9.|Het systeem veranderd de tekst op de 'Activate'-toggleknop naar 'Deactivate'.|
 |||10.|Het systeem activeert de 'Stop'-knop.|
 |||11.|Het systeem activeert de 'E-Stop'-knop.|
-|||10.|Zodra het systeem een 'homing-complete'-bericht ontvangt van de robot activeert het systeem het controle paneel.|
+|||10.|Zodra het systeem een 'homing-complete'-bericht ontvangt van de robot activeert het systeem het controlepaneel.|
 ||**Alternative flow 01:**|3.|*De robot is niet beschikbaar voor een seriële connectie.*|
 |||4a.|Het systeem zal een error-log bericht naar de gebruiker versturen waarin vermeld wordt dat de robot niet beschikbaar is.|
 |||5a.|Het systeem veranderd de tekst van de 'Connect'-knop terug naar 'Connect'.|
@@ -79,8 +79,8 @@ In dit onderdeel zullen enkele essentiële usecases in fully-dressed formaat uit
 |3.|De gebruiker selecteert de gripper in de simulatie.|4.|Het systeem geeft aan dat de gripper geselecteerd is.|
 |5.|De gebruiker verplaatst de gripper naar de gewenste locatie|6.|Het systeem geeft de huidige locatie weer.|
 |7.|De gebruiker laat de linker muisknop los.|8.|Het systeem geeft aan dat de gripper niet meer geselecteerd is.|
-|||9.|Het systeem berekend de de hoeken die resulteren in de opgegeven locatie.|
-|||10.|Het systeem veranderd de waardes weergegeven in de text velden naar de berekende waardes.|
+|||9.|Het systeem berekend de hoeken die resulteren in de opgegeven locatie.|
+|||10.|Het systeem veranderd de waardes weergegeven in de tekst velden naar de berekende waardes.|
 |||11.|Het systeem veranderd de waardes weergegeven op de sliders naar de berekende waardes.|
 |12.|De gebruiker drukt op de 'Run'-knop|13.|Het systeem maakt een bericht aan voor de robot met de nieuwe waardes.|
 |||14.|Het systeem verstuurd het nieuwe bericht naar de robot.|
@@ -105,8 +105,8 @@ In dit onderdeel zullen enkele essentiële usecases in fully-dressed formaat uit
 |6.|De gebruiker laat de linker muisknop los.|7.|Het systeem slaat de positie op.|
 |8.|De gebruiker selecteert de slider Met de titel 'A2'|||
 |9.|De gebruiker beweegt de geselecteerde slider naar de gewenste positie.|10.|Het systeem update het bijhorende text veld naar de gekozen positie.|
-|||11.|Hey systeem update de simulatie zodat de gesimuleerde robot dezelfde hoek representeert als de gekozen waarde.|
-|12.|De gebruiker laat de linker muisknop los.|13.|Hey systeem slaat de positie op.|
+|||11.|Het systeem update de simulatie zodat de gesimuleerde robot dezelfde hoek representeert als de gekozen waarde.|
+|12.|De gebruiker laat de linker muisknop los.|13.|Het systeem slaat de positie op.|
 |14.|De gebruiker drukt op de 'Run'-knop.|15.|Het systeem maakt een bericht aan voor de robot met de nieuwe waardes.|
 |||16.|Het systeem verstuurd het nieuwe bericht naar de robot.|
 
@@ -124,7 +124,7 @@ In dit onderdeel zullen enkele essentiële usecases in fully-dressed formaat uit
 ||Actor action||System responsibility|
 |:---:|:---|:---:|:---|
 |1.|De gebruiker geeft aan de robot te willen besturen door middel van de muis.|2.|Het systeem geeft het scherm weer waar de gebruiker de robot kan besturen door middel van de muis.|
-|3.|De gebruiker selecteert het tekst veld met de titel 'A1'.|||
+|3.|De gebruiker selecteert het tekstveld met de titel 'A1'.|||
 |4.|De gebruiker typt een getal.|||
 |5.|De gebruiker drukt op de 'enter'-toets.|6.|Het systeem controleert de opgegeven waarde.|
 |||7.|Het systeem update de bijhorende slider naar de gekozen waarde.|
@@ -140,7 +140,7 @@ In dit onderdeel zullen enkele essentiële usecases in fully-dressed formaat uit
 |||5a.|Het systeem verstuurd een warning-log bericht met daarin de vermelding dat een waarde niet langer mag zijn dan 7 karakters.|
 ||||Het systeem gaat verder bij stap 3.|
 ||**Alternative flow 02:**|6.|*De opgegeven waarde is geen getal.*|
-|||7a.|Het systeem kleurt de ingevoerde waarde in het tekst veld rood.|
+|||7a.|Het systeem kleurt de ingevoerde waarde in het tekstveld rood.|
 ||||Het systeem gaat verder bij stap 3.|
 ||**Alternative flow 03:**|6.|*De opgegeven waarde is hoger dan het maximum.*|
 |||7a.|Het systeem veranderd de opgegeven waarde in het maximum.|
@@ -184,7 +184,7 @@ In dit onderdeel zullen enkele essentiële usecases in fully-dressed formaat uit
 ||Actor action||System responsibility|
 |:---:|:---|:---:|:---|
 |1.|De gebruiker geeft aan de robot te willen besturen door middel van de muis.|2.|Het systeem geeft het scherm weer waar de gebruiker de robot kan besturen door middel van de muis.|
-|3.|De gebruiker selecteert het tekst veld met de titel 'Speed'|||
+|3.|De gebruiker selecteert het tekstveld met de titel 'Speed'|||
 |4.|De gebruiker typt een getal.|||
 |5.|De gebruiker drukt op de 'Enter'-toets.|6.|Het systeem controleert de opgegeven waarde.|
 |||7.|Het systeem update de bijhorende slider naar de gekozen waarde.|
@@ -194,7 +194,7 @@ In dit onderdeel zullen enkele essentiële usecases in fully-dressed formaat uit
 |||5a.|Het systeem verstuurd een warning-log bericht met daarin de vermelding dat een waarde niet langer mag zijn dan 7 karakters.|
 ||||Het systeem gaat verder bij stap 3.|
 ||**Alternative flow 02:**|6.|*De opgegeven waarde is geen getal.*|
-|||7b.|Het systeem kleurt de ingevoerde waarde in het tekst veld rood.|
+|||7b.|Het systeem kleurt de ingevoerde waarde in het tekstveld rood.|
 ||||Het systeem gaat verder bij stap 3.|
 ||**Alternative flow 03:**|6.|*De opgegeven waarde is hoger dan het maximum.*|
 |||7c.|Het systeem veranderd de opgegeven waarde in het maximum.|
