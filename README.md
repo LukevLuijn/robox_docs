@@ -16,7 +16,7 @@
 |:---:|:---|:---|
 |**PR-01**|[**Code**](https://github.com/LukevLuijn/robox/tree/main/robox_firmware)|Op deze pagina is alle code van de firmware te vinden. In de README zijn de installatie instructies beschreven.|
 |**PR-02**|[**SRS**](https://github.com/LukevLuijn/robox_docs/blob/73b2cea2f5308ddbc207318900ecc6375a1ebc31/design/firmware/srs/chapters/srs_firmware.md)|Deze pagina bevat het *software requirements specificaion* document van de firmware. In dit document worden de verschillende requirements besproken.|
-|**PR-03**|[**SDD**]https://github.com/LukevLuijn/robox_docs/blob/73b2cea2f5308ddbc207318900ecc6375a1ebc31/design/firmware/sdd/chapters/sdd_firmware.md)|Op deze pagina is het software design description document te lezen van het firmware onderdeel. In dit document wordt het ontwerp van de firmware besproken en welke beslissingen zijn gemaakt.|
+|**PR-03**|[**SDD**](https://github.com/LukevLuijn/robox_docs/blob/73b2cea2f5308ddbc207318900ecc6375a1ebc31/design/firmware/sdd/chapters/sdd_firmware.md)|Op deze pagina is het software design description document te lezen van het firmware onderdeel. In dit document wordt het ontwerp van de firmware besproken en welke beslissingen zijn gemaakt.|
 
 ## Software
 
