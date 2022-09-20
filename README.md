@@ -2,6 +2,8 @@
 
 > **```Note```** All design documents, experiments, and other documentation is written in dutch.
 
+> **```Note```** All the models and code for this project can be found [**here**](https://github.com/LukevLuijn/robox).
+
 ## Digital media productions
 
 |#|Product|Beschrijving|
